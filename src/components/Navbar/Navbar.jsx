@@ -7,15 +7,16 @@ import AccountCircleTwoToneIcon from '@mui/icons-material/AccountCircleTwoTone';
 import { IoSearch } from "react-icons/io5";
 
 const Navbar = () => {
+
   return (
-    <Box sx={{width:"100%", height:"80px", borderBottom:"1px solid #E5E4E2", display:"flex", alignItems:"center", position:"sticky"}}>
-      <Box sx={{width:"95%", display:"flex", justifyContent:"space-between", margin:"0 auto"}}>
-           <Box sx={{display:"flex", flexDirection:"row", gap:1, alignItems:"center", cursor:"pointer" }}>
+    <Box sx={{width:"100%", height:"80px", borderBottom:"1px solid #E5E4E2", display:"flex", alignItems:"center", position:"sticky", zIndex:1000 }}>
+      <Box sx={{width:"95%", display:"flex", margin:"0 auto", justifyContent:{xs:"center",md:"space-between"}}}>
+           <Box sx={{display:{xs:'none', md:"flex"}, flexDirection:"row", gap:1, alignItems:"center", cursor:"pointer" }}>
                 <SiAirbnb size={40} color='#ff385c'/>
                 <Typography sx={{fontWeight:"bold", color:"#ff385c", fontSize:"1.5rem"}}>airbnb</Typography>
            </Box>
-           <Paper elevation={1} sx={{border:"1px solid #E5E4E2", borderRadius:"50px", padding:"4px 3px 4px 26px"}} >
-           <Stack sx={{display:"flex", flexDirection:"row", height:"40px",  alignItems:"center", cursor:"pointer", gap:1}} >
+           <Paper elevation={1} sx={{border:"1px solid #E5E4E2", borderRadius:"50px", padding:"4px 3px 4px 26px", }} >
+           <Stack sx={{flexDirection:"row", height:"40px",  alignItems:"center", cursor:"pointer", gap:1}} >
             <Typography variant='body1' color='black' fontFamily="Arial, Helvetica, sans-serif">Anywhere</Typography>
             <Divider orientation="vertical" variant="middle" flexItem />
             <Typography variant='body1' color='black' fontFamily="Arial, Helvetica, sans-serif">Any week</Typography>
@@ -26,7 +27,7 @@ const Navbar = () => {
             </IconButton>
            </Stack>
            </Paper>
-           <Box sx={{display:'flex', alignItems:"center", gap:2}}>
+           <Box sx={{display:{xs:"none", md:'flex'}, alignItems:"center", gap:2}}>
             <Typography variant='body1' color='#000000' fontFamily="Arial, Helvetica, sans-serif" sx={{cursor:"pointer"}}>Airbnb your home</Typography>
             <IconButton  sx={{ fontSize: '20px',color:'black' }}  >
             <CiGlobe />
