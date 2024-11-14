@@ -7,7 +7,8 @@ import AccountCircleTwoToneIcon from '@mui/icons-material/AccountCircleTwoTone';
 import { IoSearch } from "react-icons/io5";
 
 const Navbar = () => {
-
+   
+    const items = ["Anywhere", "Any week", "Add guests"]
   return (
     <Box sx={{width:"100%", height:"80px", borderBottom:"1px solid #E5E4E2", display:"flex", alignItems:"center", position:"sticky", zIndex:1000 }}>
       <Box sx={{width:"95%", display:"flex", margin:"0 auto", justifyContent:{xs:"center",md:"space-between"}}}>
