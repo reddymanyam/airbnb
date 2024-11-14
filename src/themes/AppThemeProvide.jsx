@@ -1,5 +1,6 @@
 import React from 'react'
 import { createTheme, ThemeProvider } from '@mui/material/styles'
+import { grey, black } from '@mui/material/colors'
 
 
 const theme = createTheme({
@@ -14,8 +15,11 @@ const theme = createTheme({
 
     palette:{
         primary:{
-            
-        }
+            main: grey[700]
+        },
+        secondary:{
+            main: black[600]
+        },
     }
 
 })
