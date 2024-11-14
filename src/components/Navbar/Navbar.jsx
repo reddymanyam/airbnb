@@ -8,7 +8,7 @@ import { IoSearch } from "react-icons/io5";
 
 const Navbar = () => {
   return (
-    <Box sx={{width:"100%", height:"80px", borderBottom:"1px solid #E5E4E2", display:"flex", alignItems:"center"}}>
+    <Box sx={{width:"100%", height:"80px", borderBottom:"1px solid #E5E4E2", display:"flex", alignItems:"center", position:"sticky"}}>
       <Box sx={{width:"95%", display:"flex", justifyContent:"space-between", margin:"0 auto"}}>
            <Box sx={{display:"flex", flexDirection:"row", gap:1, alignItems:"center", cursor:"pointer" }}>
                 <SiAirbnb size={40} color='#ff385c'/>
@@ -26,18 +26,18 @@ const Navbar = () => {
             </IconButton>
            </Stack>
            </Paper>
-           <Box sx={{display:'flex', alignItems:"center"}}>
-            <Typography variant='body1' color='black' fontFamily="Arial, Helvetica, sans-serif" sx={{cursor:"pointer"}}>Airbnb your home</Typography>
-            <IconButton >
-            <CiGlobe color='black'/>
+           <Box sx={{display:'flex', alignItems:"center", gap:2}}>
+            <Typography variant='body1' color='#000000' fontFamily="Arial, Helvetica, sans-serif" sx={{cursor:"pointer"}}>Airbnb your home</Typography>
+            <IconButton  sx={{ fontSize: '20px',color:'black' }}  >
+            <CiGlobe />
             </IconButton>
             <Paper sx={{border:"1px solid #E5E4E2", borderRadius:"50px", padding:"2px"}}>
             <Stack sx={{display:"flex", flexDirection:"row"}}>
                  <IconButton aria-label='MenuIcon'>
-                 <IoMenuOutline color='black' />
+                 <IoMenuOutline color='black'/>
                  </IconButton>
                  <IconButton aria-label='Account'>
-                 <AccountCircleTwoToneIcon  sx={{fontSize:"30px"}}/>
+                 <AccountCircleTwoToneIcon />
                  </IconButton>
             </Stack>
             </Paper>
