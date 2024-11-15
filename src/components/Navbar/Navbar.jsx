@@ -10,7 +10,7 @@ const Navbar = () => {
    
     const items = ["Anywhere", "Any week", "Add guests"]
   return (
-    <Box sx={{width:"100%", height:"80px", borderBottom:"1px solid #E5E4E2", display:"flex", alignItems:"center", position:"sticky", zIndex:1000, top:0 }}>
+    <Box sx={{width:"100%", height:"80px", borderBottom:"1px solid #E5E4E2", display:"flex", alignItems:"center", position:"sticky", zIndex:1000, top:0, backgroundColor:"white" }}>
       <Box sx={{width:"95%", display:"flex", margin:"0 auto", justifyContent:{xs:"center",md:"space-between"}}}>
            <Box sx={{display:{xs:'none', md:"flex"}, flexDirection:"row", gap:1, alignItems:"center", cursor:"pointer" }}>
                 <SiAirbnb size={40} color='#ff385c'/>

@@ -73,8 +73,8 @@ const Options = () => {
         setValue(newValue)
     }
   return (
-    <Container maxWidth="xl">
-        <Box sx={{display:"flex", flexGrow:1, px:{xs:0, md:2}, alignItems:"center", mt:2, mb:2}}>
+    <Container maxWidth="xl" sx={{position:"sticky", top:"80px", zIndex:1000, backgroundColor:"white"}}>
+        <Box sx={{display:"flex", flexGrow:1, px:{xs:0, md:2}, alignItems:"center", mt:2, mb:2, }}>
           <Tabs value={value} onChange={handleChange} variant='scrollable' scrollButtons sx={{['&.${tabsClasses.scrollButtons}']:{
             '&.Mui-disabled':{opacity:0.3},
           }, '& .MuiTabs-indicator':{color:"black"} }}>
