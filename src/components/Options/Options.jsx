@@ -77,7 +77,7 @@ const Options = () => {
         <Box sx={{display:"flex", flexGrow:1, px:{xs:0, md:2}, alignItems:"center", mt:2, mb:2}}>
           <Tabs value={value} onChange={handleChange} variant='scrollable' scrollButtons sx={{['&.${tabsClasses.scrollButtons}']:{
             '&.Mui-disabled':{opacity:0.3},
-          }, '& .MuiTabs-indicator':{display:"none"} }}>
+          }, '& .MuiTabs-indicator':{color:"black"} }}>
               {locationsTab.map((tab)=>{
                 return <Tab key={tab.id} icon={tab.icon} label={tab.label} sx={{color:"black"}} />;
               })}
