@@ -1,9 +1,11 @@
+import { HelpCenter } from "@mui/icons-material";
 import Auth from "../Auth/Auth";
-import Navbar from "../components/Navbar/Navbar";
+import Experience from "../Pages/Experience/Experience";
 
 const Router =[
 
     {path:"/", element:<Auth />},
     {path:"/home", element:<Home />},
-    {path:""}
+    {path:"/experience", element:<Experience />},
+    {path:"/help", element:<HelpCenter />}
 ]
