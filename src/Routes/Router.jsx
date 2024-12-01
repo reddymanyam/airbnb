@@ -6,7 +6,7 @@ import Experience from "../Pages/Experience/Experience";
 import HelpCenter from "../Pages/Help/HelpCenter";
 import HomePage from "../Pages/Home/HomePage";
 
-const Router = [
+export const Router = [
     {
         path:"/",
         element:<MainLayout />,
