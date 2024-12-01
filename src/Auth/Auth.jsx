@@ -5,7 +5,7 @@ import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-import bgimg from '../assets/minimalism-4k-for-mac-desktop-wallpaper-preview.jpg';
+// import bgimg from '../assets/minimalism-4k-for-mac-desktop-wallpaper-preview.jpg';
 import styled from '@emotion/styled';
 import axios from 'axios';
 

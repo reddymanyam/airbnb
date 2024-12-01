@@ -1,14 +1,13 @@
 import React from 'react'
-import Navbar from './components/Navbar/Navbar'
-import Options from './components/Options/Options'
-import Cards from './components/Cards/Cards'
+import { useRoutes } from 'react-router-dom';
+import Routes from './Auth/Auth';
 
 const App = () => {
+
+  const routing = useRoutes(Routes);
   return (
     <>
-    <Navbar />
-    <Options />
-    <Cards />
+      {routing}
     </>
   )
 }
