@@ -15,13 +15,13 @@ export const Router = [
         ]
     },
     {
-        path : "/",
+        path : "/auth",
         element:<Layout />,
         children:[
-            {path:'/', element:<Auth />},
-            {path:'/homepage', element:<HomePage />},
-            {path:'/helpcenter', element:<HelpCenter />},
-            {path:'/experience', element:<Experience />},
+            {path:'/auth', element:<Auth />},
+            {path:'/auth/homepage', element:<HomePage />},
+            {path:'/auth/helpcenter', element:<HelpCenter />},
+            {path:'/auth/experience', element:<Experience />},
         ]
     }
 ]
