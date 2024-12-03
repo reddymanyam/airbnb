@@ -1,15 +1,11 @@
-import React from 'react'
-import { useRoutes } from 'react-router-dom';
-import Routes from './Auth/Auth';
+import React from "react";
+import { useRoutes } from "react-router-dom";
+import { Router } from './Auth/Auth';
 
 const App = () => {
-  const routing = useRoutes(Routes);
+  const routing = useRoutes(Router);
   
-  return (
-    <>
-      {routing}
-    </>
-  )
-}
+  return routing;
+};
 
-export default App
+export default App;
