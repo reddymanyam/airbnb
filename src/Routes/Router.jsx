@@ -6,12 +6,13 @@ import Experience from "../Pages/Experience/Experience";
 import HelpCenter from "../Pages/Help/HelpCenter";
 import HomePage from "../Pages/Home/HomePage";
 
-export const Router = [
+const Router = [
     {
         path:"/",
         element:<MainLayout />,
         children:[
-            {path:'/', element:<Dashboard />}
+            {path:'/', element:<Dashboard />},
+            { path: '*', element: <Navigate to="/" replace /> }
         ]
     },
     {
@@ -25,3 +26,5 @@ export const Router = [
         ]
     }
 ]
+
+export default Router;
