@@ -8,22 +8,37 @@ import HomePage from "../Pages/Home/HomePage";
 
 const Router = [
     {
-        path:"/",
-        element:<MainLayout />,
-        children:[
-            {path:'/', element:<Dashboard />}
+        path: "/",
+        element: <MainLayout />,
+        children: [
+            {
+                index: true, // Use index for the default route instead of path:'/'
+                element: <Dashboard />
+            }
         ]
     },
     {
-        path : "/",
-        element:<Layout />,
-        children:[
-            {path:'/auth', element:<Auth />},
-            {path:'/homepage', element:<HomePage />},
-            {path:'/helpcenter', element:<HelpCenter />},
-            {path:'/experience', element:<Experience />},
+        path: "/",
+        element: <Layout />,
+        children: [
+            {
+                path: "auth",
+                element: <Auth />
+            },
+            {
+                path: "homepage", 
+                element: <HomePage />
+            },
+            {
+                path: "helpcenter", 
+                element: <HelpCenter />
+            },
+            {
+                path: "experience", 
+                element: <Experience />
+            }
         ]
     }
-]
+];
 
 export default Router;
