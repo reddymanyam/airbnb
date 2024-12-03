@@ -1,6 +1,5 @@
-import React from "react";
 import { useRoutes } from "react-router-dom";
-import { Router } from './Auth/Auth';
+import Router from './Routes/Router';
 
 const App = () => {
   const routing = useRoutes(Router);
