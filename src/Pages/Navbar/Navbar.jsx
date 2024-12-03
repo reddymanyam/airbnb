@@ -7,10 +7,13 @@ import AccountCircleTwoToneIcon from '@mui/icons-material/AccountCircleTwoTone';
 import { IoSearch } from "react-icons/io5";
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
+import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
 
-  const items = ["Anywhere", "Any week", "Add guests"]
+  // const items = ["Anywhere", "Any week", "Add guests"]
+
+  const navigate = useNavigate();
   
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -21,10 +24,25 @@ const Navbar = () => {
     setAnchorEl(null);
   };
 
+  const handleSignUp = () =>{
+    navigate('/auth')
+  }
+ 
+  const handleHomepage = () =>{
+    navigate('/homepage')
+  }
+
+  const handleHelpCenter = () =>{
+    navigate('/helpcenter')
+  }
+
+  const handleExperience = () =>{
+    navigate('/experience')
+  }
   return (
     <Box sx={{ width: "100%", height: "80px", borderBottom: "1px solid #E5E4E2", display: "flex", alignItems: "center", position: "sticky", zIndex: 1000, top: 0, backgroundColor: "white" }}>
       <Box sx={{ width: "95%", display: "flex", margin: "0 auto", justifyContent: { xs: "center", md: "space-between" } }}>
-        <Box sx={{ display: { xs: 'none', md: "flex" }, flexDirection: "row", gap: 1, alignItems: "center", cursor: "pointer" }}>
+        <Box sx={{ display: { xs: 'none', md: "flex" }, flexDirection: "row", gap: 1, alignItems: "center", cursor: "pointer" }} onClick={handleHomepage}>
           <SiAirbnb size={40} color='#ff385c' />
           <Typography sx={{ fontWeight: "bold", color: "#ff385c", fontSize: "1.5rem" }}>airbnb</Typography>
         </Box>
@@ -41,7 +59,7 @@ const Navbar = () => {
           </Stack>
         </Paper>
         <Box sx={{ display: { xs: "none", md: 'flex' }, alignItems: "center", gap: 2 }}>
-          <Typography variant='body1' color='#000000' fontFamily="Arial, Helvetica, sans-serif" sx={{ cursor: "pointer" }}>Airbnb your home</Typography>
+          <Typography variant='body1' color='#000000' fontFamily="Arial, Helvetica, sans-serif" sx={{ cursor: "pointer" }} onClick={handleHomepage} >Airbnb your home</Typography>
           <IconButton sx={{ fontSize: '20px', color: 'black' }}  >
             <CiGlobe />
           </IconButton>
@@ -91,20 +109,20 @@ const Navbar = () => {
         transformOrigin={{ horizontal: 'right', vertical: 'top' }}
         anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
       >
-        <MenuItem onClick={handleClose}>
+        <MenuItem onClick={handleSignUp}>
           <Typography variant="body1" component="span">Sign up</Typography>
         </MenuItem>
-        <MenuItem onClick={handleClose}>
+        <MenuItem onClick={handleSignUp}>
         <Typography variant="body1" component="span">Login</Typography> 
         </MenuItem>
         <Divider />
-        <MenuItem onClick={handleClose}>
+        <MenuItem onClick={handleHomepage}>
           <Typography variant="body1" component="span">Airbnb your home</Typography>
         </MenuItem>
-        <MenuItem onClick={handleClose}>
+        <MenuItem onClick={handleExperience}>
         <Typography variant='body1' component="span">Host an experience</Typography>
         </MenuItem>
-        <MenuItem onClick={handleClose}>
+        <MenuItem onClick={handleHelpCenter}>
         <Typography variant="body1" component="span">Help Centre</Typography>
         </MenuItem>
       </Menu>
