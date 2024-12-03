@@ -127,7 +127,7 @@ export default function Auth() {
                 alignItems: 'center',
                 height: '100vh',
                 width: '100%',
-                backgroundImage: `url(${bgimg})`,
+                // backgroundImage: `url(${bgimg})`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 backgroundRepeat: 'no-repeat',
