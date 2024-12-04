@@ -5,6 +5,7 @@ import { RxHome } from "react-icons/rx";
 import { useNavigate } from 'react-router-dom';
 import GoogleMaps from '../../GoogleMaps/GoogleMaps';
 import Grid from '@mui/material/Grid2';
+import Footer from '../Footer/Footer';
 
 const HomePage = () => {
 
@@ -45,6 +46,7 @@ const HomePage = () => {
         </Grid>
         </Grid>
       </Box>
+      <Footer />
     </Box>
   )
 }
