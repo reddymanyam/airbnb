@@ -178,7 +178,10 @@ const Navbar = () => {
               }}
             >
               <Stack sx={{ display: "flex", flexDirection: "row" }}>
-                <IconButton aria-label='MenuIcon'>
+                <IconButton aria-label='MenuIcon'  onClick={handleClick}
+                  aria-controls={open ? 'account-menu' : undefined}
+                  aria-haspopup="true"
+                  aria-expanded={open ? 'true' : undefined}>
                   <IoMenuOutline color='black' />
                 </IconButton>
                 <IconButton
