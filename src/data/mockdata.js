@@ -4,19 +4,19 @@ export const locations = [
     locationImages: [
       {
         id: 1,
-        url: 'https://images.unsplash.com/photo-1600240644455-3edc55c375fe?auto=format&fit=crop&w=400&h=250&q=60',
+        url: 'https://a0.muscache.com/im/pictures/27013fec-93f9-4250-b9b6-0004a3f6aefb.jpg?im_format=avif&im_w=720',
       },
       {
         id: 2,
-        url: 'https://images.unsplash.com/photo-1653408400816-af6dba0c9432?auto=format&fit=crop&w=400&h=250&q=60',
+        url: 'https://a0.muscache.com/im/pictures/1cc0acb9-49d7-4ac3-b02e-15b5f001edc5.jpg?im_format=avif&im_w=720',
       },
       {
         id: 3,
-        url: 'https://images.unsplash.com/photo-1653312727964-736f11663ef6?auto=format&fit=crop&w=400&h=250&q=80',
+        url: 'https://a0.muscache.com/im/pictures/018b0d81-942a-4f5a-9a28-527d714103d6.jpg?im_w=720&im_format=avif',
       },
       {
         id: 4,
-        url: 'https://images.unsplash.com/photo-1629447236132-22c57cd0f0bf?auto=format&fit=crop&w=400&h=250&q=60',
+        url: 'https://a0.muscache.com/im/pictures/a569ec98-7a60-4448-9489-a5dd8b500b3b.jpg?im_format=avif&im_w=720',
       },
     ],
     location: 'Gardon Reveira, Italy',
@@ -29,21 +29,22 @@ export const locations = [
     id: 2,
     locationImages: [
       {
+        id: 4,
+        url: 'https://a0.muscache.com/im/pictures/miso/Hosting-47296994/original/6784abbf-67c7-41ec-b225-78dfd7c4c0e1.jpeg?im_format=avif&im_w=720',
+      },
+      {
         id: 1,
-        url: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=400&h=250&q=60',
+        url: 'https://a0.muscache.com/im/pictures/miso/Hosting-1086878507510702364/original/c2033272-46ee-42db-8bb5-7a95bc36e12f.jpeg?im_w=720&im_format=avif',
       },
       {
         id: 2,
-        url: 'https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?auto=format&fit=crop&w=400&h=250&q=60',
+        url: 'https://a0.muscache.com/im/pictures/edb2225b-1655-42ef-a39d-3d6758278d73.jpg?im_w=720&im_format=avif',
       },
       {
         id: 3,
-        url: 'https://images.unsplash.com/photo-1433086966358-54859d0ed716?auto=format&fit=crop&w=400&h=250&q=80',
+        url: 'https://a0.muscache.com/im/pictures/52c33fc5-965c-4bbd-9f2b-1e9235c16581.jpg?im_w=960&im_format=avif',
       },
-      {
-        id: 4,
-        url: 'https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&w=400&h=250&q=60',
-      },
+      
     ],
     location: 'Joshua tree, USA',
     days: 'Sep 2-11',
@@ -56,41 +57,41 @@ export const locations = [
     locationImages: [
       {
         id: 1,
-        url: 'https://images.unsplash.com/photo-1426604966848-d7adac402bff?auto=format&fit=crop&w=400&h=250&q=60',
+        url: 'https://a0.muscache.com/im/pictures/30f91da1-6ab4-44ef-ae56-2f905d6cea98.jpg?im_w=720&im_format=avif',
       },
       {
         id: 2,
-        url: 'https://images.unsplash.com/photo-1586348943529-beaae6c28db9?auto=format&fit=crop&w=400&h=250&q=60',
+        url: 'https://images.unsplash.com/photo-1519821172144-4f87d85de2a1?auto=format&fit=crop&w=400&h=250&q=60',
       },
       {
         id: 3,
-        url: 'https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?auto=format&fit=crop&w=400&h=250&q=80',
+        url: 'https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&w=400&h=250&q=80',
       },
       {
         id: 4,
-        url: 'https://images.unsplash.com/photo-1472214103451-9374bd1c798e?auto=format&fit=crop&w=400&h=250&q=60',
+        url: 'https://images.unsplash.com/photo-1562095241-8c6714fd4178?auto=format&fit=crop&w=400&h=250&q=60',
       },
     ],
-    location: 'Uvita rosa, Costa Rica',
-    days: 'Nov 19-22',
-    price: '$1,129 CAD night',
+    location: 'Carlux, France',
+    days: 'Oct 28-Nov 4',
+    price: '$2511 CAD night',
     isNew: true,
-    rating: 4.6,
+    rating: 4.5,
   },
   {
     id: 4,
     locationImages: [
       {
         id: 1,
-        url: 'https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?auto=format&fit=crop&w=400&h=250&q=60',
+        url: 'https://a0.muscache.com/im/pictures/75e32038-f42d-47ac-8f57-9e4a3ec4e34c.jpg?im_w=720&im_format=avif',
       },
       {
         id: 2,
-        url: 'https://images.unsplash.com/photo-1475113548554-5a36f1f523d6?auto=format&fit=crop&w=400&h=250&q=60',
+        url: 'https://a0.muscache.com/im/pictures/miso/Hosting-1179544892084190626/original/9d14553c-19e2-4a84-86ba-a5710911517f.jpeg?im_w=720&im_format=avif',
       },
       {
         id: 3,
-        url: 'https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=400&h=250&q=80',
+        url: 'https://a0.muscache.com/im/pictures/miso/Hosting-1179544892084190626/original/86db22ea-188c-422e-8e75-fd97b218a6d3.jpeg?im_w=720&im_format=avif',
       },
       {
         id: 4,
@@ -108,7 +109,7 @@ export const locations = [
     locationImages: [
       {
         id: 1,
-        url: 'https://images.unsplash.com/photo-1647891940243-77a6483a152e?auto=format&fit=crop&w=400&h=250&q=60',
+        url: 'https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTE3ODg5NTk2NTQyMjQ3NjAzNg%3D%3D/original/2c0d76de-8d88-4afd-8310-09409d9e2ca8.png?im_w=720&im_format=avif',
       },
       {
         id: 2,
@@ -134,11 +135,11 @@ export const locations = [
     locationImages: [
       {
         id: 1,
-        url: 'https://images.unsplash.com/photo-1505765050516-f72dcac9c60e?auto=format&fit=crop&w=400&h=250&q=60',
+        url: 'https://a0.muscache.com/im/pictures/17dc8f51-3785-4dd5-a3e3-2f6556297192.jpg?im_w=960&im_format=avif',
       },
       {
         id: 2,
-        url: 'https://images.unsplash.com/photo-1470770903676-69b98201ea1c?auto=format&fit=crop&w=400&h=250&q=60',
+        url: 'https://a0.muscache.com/im/pictures/c2c0171e-e95c-4233-9fea-fddbbf4eff71.jpg?im_w=720&im_format=avif',
       },
       {
         id: 3,
@@ -160,11 +161,11 @@ export const locations = [
     locationImages: [
       {
         id: 1,
-        url: 'https://images.unsplash.com/photo-1504567961542-e24d9439a724?auto=format&fit=crop&w=400&h=250&q=60',
+        url: 'https://a0.muscache.com/im/pictures/hosting/Hosting-53632904/original/05f6affb-c6a4-4d68-a6a8-b33daee5d5ce.jpeg?im_w=720&im_format=avif',
       },
       {
         id: 2,
-        url: 'https://images.unsplash.com/photo-1499002238440-d264edd596ec?auto=format&fit=crop&w=400&h=250&q=60',
+        url: 'https://a0.muscache.com/im/pictures/6fde69fa-4265-44a7-940d-c8ff85640e89.jpg?im_w=720&im_format=avif',
       },
       {
         id: 3,
@@ -186,11 +187,11 @@ export const locations = [
     locationImages: [
       {
         id: 1,
-        url: 'https://images.unsplash.com/photo-1523528283115-9bf9b1699245?auto=format&fit=crop&w=400&h=250&q=60',
+        url: 'https://a0.muscache.com/im/pictures/602c2cd4-059d-4561-8e16-ad075c65d298.jpg?im_w=720&im_format=avif',
       },
       {
         id: 2,
-        url: 'https://images.unsplash.com/photo-1516205651411-aef33a44f7c2?auto=format&fit=crop&w=400&h=250&q=60',
+        url: 'https://a0.muscache.com/im/pictures/miso/Hosting-54388500/original/46568818-e2eb-4e05-bf61-0a961194706a.jpeg?im_w=720&im_format=avif',
       },
       {
         id: 3,
@@ -212,7 +213,7 @@ export const locations = [
     locationImages: [
       {
         id: 1,
-        url: 'https://images.unsplash.com/photo-1518241353330-0f7941c2d9b5?auto=format&fit=crop&w=400&h=250&q=60',
+        url: 'https://a0.muscache.com/im/pictures/miso/Hosting-1010805548157436225/original/c3fe32b5-b524-4be0-9a43-dac9b257158d.jpeg?im_w=720&im_format=avif',
       },
       {
         id: 2,
@@ -238,7 +239,7 @@ export const locations = [
     locationImages: [
       {
         id: 1,
-        url: 'https://images.unsplash.com/photo-1518593929011-2b5ef6be57c7?auto=format&fit=crop&w=400&h=250&q=60',
+        url: 'https://a0.muscache.com/im/pictures/hosting/Hosting-1132579595689890819/original/aed05afc-b4ad-48e5-997a-0316ef426d72.jpeg?im_w=720&im_format=avif',
       },
       {
         id: 2,
@@ -264,7 +265,7 @@ export const locations = [
     locationImages: [
       {
         id: 1,
-        url: 'https://images.unsplash.com/photo-1458966480358-a0ac42de0a7a?auto=format&fit=crop&w=400&h=250&q=60',
+        url: 'https://a0.muscache.com/im/pictures/4acbe4ce-6003-4402-9f42-830fa438f188.jpg?im_w=720&im_format=avif',
       },
       {
         id: 2,
@@ -290,7 +291,7 @@ export const locations = [
     locationImages: [
       {
         id: 1,
-        url: 'https://images.unsplash.com/photo-1526336179256-1347bdb255ee?auto=format&fit=crop&w=400&h=250&q=60',
+        url: 'https://a0.muscache.com/im/pictures/a38b35e4-87d7-4f18-824a-5fae1a916637.jpg?im_w=960&im_format=avif',
       },
       {
         id: 2,
@@ -316,7 +317,7 @@ export const locations = [
     locationImages: [
       {
         id: 1,
-        url: 'https://images.unsplash.com/photo-1470240731273-7821a6eeb6bd?auto=format&fit=crop&w=400&h=250&q=60',
+        url: 'https://a0.muscache.com/im/pictures/731cc133-3e1b-42d5-8c1a-b785392969f5.jpg?im_w=720&im_format=avif',
       },
       {
         id: 2,
@@ -342,7 +343,7 @@ export const locations = [
     locationImages: [
       {
         id: 1,
-        url: 'https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=400&h=250&q=60',
+        url: 'https://a0.muscache.com/im/pictures/407f5a97-51fb-41cd-818f-6ce5ef6fdb78.jpg?im_w=720&im_format=avif',
       },
       {
         id: 2,
@@ -368,7 +369,7 @@ export const locations = [
     locationImages: [
       {
         id: 1,
-        url: 'https://images.unsplash.com/photo-1542856391-010fb87dcfed?auto=format&fit=crop&w=400&h=250&q=60',
+        url: 'https://a0.muscache.com/im/pictures/c7ba2a01-cb14-4ed4-a2f5-7bece2d6e38a.jpg?im_w=960&im_format=avif',
       },
       {
         id: 2,
@@ -394,7 +395,7 @@ export const locations = [
     locationImages: [
       {
         id: 1,
-        url: 'https://images.unsplash.com/photo-1504870712357-65ea720d6078?auto=format&fit=crop&w=400&h=250&q=60',
+        url: 'https://a0.muscache.com/im/pictures/miso/Hosting-719943599954558119/original/7125529f-3490-438d-997e-8155be6735a7.jpeg?im_w=720&im_format=avif',
       },
       {
         id: 2,
@@ -420,7 +421,7 @@ export const locations = [
     locationImages: [
       {
         id: 1,
-        url: 'https://images.unsplash.com/photo-1503435824048-a799a3a84bf7?auto=format&fit=crop&w=400&h=250&q=60',
+        url: 'https://a0.muscache.com/im/pictures/8bef86ff-abc2-43e5-ac00-d22314ac5f30.jpg?im_w=960&im_format=avif',
       },
       {
         id: 2,
@@ -446,33 +447,34 @@ export const locations = [
     locationImages: [
       {
         id: 1,
-        url: 'https://images.unsplash.com/photo-1465147264724-326b45c3c59b?auto=format&fit=crop&w=400&h=250&q=60',
-      },
-      {
-        id: 2,
-        url: 'https://images.unsplash.com/photo-1519821172144-4f87d85de2a1?auto=format&fit=crop&w=400&h=250&q=60',
-      },
-      {
-        id: 3,
-        url: 'https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&w=400&h=250&q=80',
+        url: 'https://images.unsplash.com/photo-1472214103451-9374bd1c798e?auto=format&fit=crop&w=400&h=250&q=60',
       },
       {
         id: 4,
-        url: 'https://images.unsplash.com/photo-1562095241-8c6714fd4178?auto=format&fit=crop&w=400&h=250&q=60',
+        url: 'https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?auto=format&fit=crop&w=400&h=250&q=80',
       },
+      {
+        id: 2,
+        url: 'https://a0.muscache.com/im/pictures/hosting/Hosting-1195632698373197465/original/84233265-a2d8-470b-a63f-eaab56360277.jpeg?im_w=720&im_format=avif',
+      },
+      {
+        id: 3,
+        url: 'https://a0.muscache.com/im/pictures/7a26a6b3-27d4-4893-b31a-6aa213a95557.jpg?im_w=960&im_format=avif',
+      },
+     
     ],
-    location: 'Carlux, France',
-    days: 'Oct 28-Nov 4',
-    price: '$2511 CAD night',
+    location: 'Uvita rosa, Costa Rica',
+    days: 'Nov 19-22',
+    price: '$1,129 CAD night',
     isNew: true,
-    rating: 4.5,
+    rating: 4.6,
   },
   {
     id: 19,
     locationImages: [
       {
         id: 1,
-        url: 'https://images.unsplash.com/photo-1501786223405-6d024d7c3b8d?auto=format&fit=crop&w=400&h=250&q=60',
+        url: 'https://a0.muscache.com/im/pictures/37a6f12e-4b27-4dfc-8a26-797edad68405.jpg?im_w=720&im_format=avif',
       },
       {
         id: 2,
@@ -498,7 +500,7 @@ export const locations = [
     locationImages: [
       {
         id: 1,
-        url: 'https://images.unsplash.com/photo-1518241353330-0f7941c2d9b5?auto=format&fit=crop&w=400&h=250&q=60',
+        url: 'https://a0.muscache.com/im/pictures/miso/Hosting-682532062642282436/original/4386488d-4b07-4624-b4c3-f03880075491.jpeg?im_w=960&im_format=avif',
       },
       {
         id: 2,
