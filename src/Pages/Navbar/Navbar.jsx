@@ -232,7 +232,7 @@ const Navbar = () => {
           padding:"40px"
         }
       }}>
-        <LocalizationProvider dateAdapter={AdapterDayjs}>
+        <LocalizationProvider dateAdapter={AdapterDayjs} >
           <DateRangeCalendar />
         </LocalizationProvider>
       </Dialog>
