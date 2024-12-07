@@ -1,10 +1,17 @@
 import { useRoutes } from "react-router-dom";
 import Router from './Routes/Router';
+import { ThemeProvider } from "@emotion/react";
+import { CssBaseline } from "@mui/material";
 
 const App = () => {
-  const routing = useRoutes(Router);
+  <ThemeProvider>
+    <CssBaseline />
+    const routing = useRoutes(Router);
+    return routing;
+  </ThemeProvider>
   
-  return routing;
+  
+ 
 };
 
 export default App;
