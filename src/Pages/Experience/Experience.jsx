@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import PauseCircleOutlineIcon from '@mui/icons-material/PauseCircleOutline';
 import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline';
 import Footer from '../Footer/Footer';
+import AccordionCard from '../Accordian/AccordionCard';
 
 const Experience = () => {
   const navigate = useNavigate();
@@ -173,7 +174,7 @@ const Experience = () => {
         categories.
       </Typography>
     </Stack>
-    {/* <Accordions /> */}
+    <AccordionCard />
     <Box width="100%" bgcolor="white">
     <Footer />
     </Box>
