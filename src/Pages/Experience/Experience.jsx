@@ -164,8 +164,8 @@ const Experience = () => {
         variant="body1"
         sx={{
           color: "black",
-          maxWidth: "500px", // Limit the width for better alignment
-          lineHeight: 1.6, // Improve text readability
+          maxWidth: "500px", 
+          lineHeight: 1.6, 
         }}
       >
         There are experiences of every kind, like cooking, crafting, kayaking,
