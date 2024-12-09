@@ -89,7 +89,7 @@ const Experience = () => {
           alignItems: 'center',
           position: 'sticky',
           top: '0',
-          zIndex: '100',
+          zIndex: '1000',
           bgcolor: 'white',
           padding: '20px 0',
         }}
