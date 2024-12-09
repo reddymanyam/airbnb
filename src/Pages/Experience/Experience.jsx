@@ -1,87 +1,187 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import { Box, Stack, Typography, Button } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
+import PauseCircleOutlineIcon from '@mui/icons-material/PauseCircleOutline';
+import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline';
+import Footer from '../Footer/Footer';
 
 const Experience = () => {
+  const navigate = useNavigate();
+  const videoRef = useRef(null); // Create a reference to the video element
+  const [isPlaying, setIsPlaying] = useState(true); // Track video playing state
+
+  const handlePausePlay = () => {
+    if (isPlaying) {
+      videoRef.current.pause(); // Pause the video
+    } else {
+      videoRef.current.play(); // Play the video
+    }
+    setIsPlaying(!isPlaying); // Toggle the state
+  };
+
   return (
-    <Box sx={{ bgcolor: "black", color: "white" }}>
-      {/* Section 1 */}
+    <Box>
+      <video
+        ref={videoRef}
+        autoPlay
+        loop
+        muted
+        playsInline
+        style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          width: '100%',
+          minHeight: '100vh',
+          objectFit: 'cover',
+          zIndex: -1,
+        }}
+      >
+        <source
+          src="https://stream.media.muscache.com/GLBXMO7wXoGpGzwi6QBynOiqpPONrVB2RQ5KCFSuIxM.mp4"
+          type="video/mp4"
+        />
+        Your browser does not support the video tag.
+      </video>
+
       <Stack
         sx={{
-          width: "100%",
-          justifyContent: "center",
-          alignItems: "center",
-          padding: "60px 0",
-          bgcolor: "white",
+          width: '100%',
+          justifyContent: 'center',
+          alignItems: 'center',
+          padding: '60px 0',
+          bgcolor: 'white',
         }}
       >
         <Stack
           sx={{
-            width: "80%",
-            alignItems: "flex-start",
-            justifyContent: "left",
-            gap: "40px",
+            width: '80%',
+            alignItems: 'flex-start',
+            justifyContent: 'left',
+            gap: '40px',
           }}
         >
-          <Typography variant="h5" sx={{ color: "black", fontSize: "24px", fontWeight: 700 }}>
+          <Typography variant="h5" sx={{ color: 'black', fontSize: '24px', fontWeight: 700 }}>
             Host an experience on Airbnb
           </Typography>
           <Typography
             variant="h2"
             sx={{
-              fontSize: "4.68rem",
-              fontWeight: "bold",
-              background: "linear-gradient(to left, #008489, #a61d55, #ffb400)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              backgroundSize: "200% 200%",
-              animation: "gradientShift 6s ease infinite",
+              fontSize: '4.68rem',
+              fontWeight: 'bold',
+              background: 'linear-gradient(to left, #008489, #a61d55, #ffb400)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundSize: '200% 200%',
+              animation: 'gradientShift 6s ease infinite',
             }}
           >
             Earn money leading people on activities you love.
           </Typography>
-          <Stack   sx={{
-          width: "100%",
-          justifyContent: "center",
-          bgcolor: "white",
-          position:"sticky",
-          top:0
-        }}>
-          <Stack sx={{justifyContent:"center", alignItems:"flex-start"}}>
-            <Button
-              variant="contained"
-              sx={{
-                bgcolor: "black",
-                color: "white",
-                padding: "15px",
-                borderRadius: "15px",
-                fontSize: "14px",
-                fontWeight: 600
-              }}
-            >
-              Let’s Go
-            </Button>
-          </Stack>
-          </Stack>
-         
         </Stack>
       </Stack>
 
-      {/* Section 2 */}
-      <Stack sx={{ padding: "40px 20px", gap: 4 }}>
-        <Typography variant="h5">
-          Host an experience on Airbnb. Lorem ipsum dolor sit amet consectetur
-          adipisicing elit. Totam explicabo dolorem consequatur quia! Maxime
-          consectetur, aliquam blanditiis ex porro exercitationem quo harum
-          sunt aut sint reiciendis qui, dolor ipsum repellendus!
-        </Typography>
-        <Typography variant="h1">
-          Earn money leading people on activities you love. Lorem ipsum dolor
-          sit amet consectetur adipisicing elit. Rem, id assumenda! Natus iste
-          tenetur at modi ea consequatur delectus laborum, numquam quidem vero
-          tempora, neque ex fugiat odio quaerat voluptas?
-        </Typography>
+      <Stack
+        sx={{
+          width: '100%',
+          justifyContent: 'center',
+          alignItems: 'center',
+          position: 'sticky',
+          top: '0',
+          zIndex: '100',
+          bgcolor: 'white',
+          padding: '20px 0',
+        }}
+      >
+        <Stack sx={{ width: '80%', alignItems: 'flex-end' }}>
+          <Button variant="contained" sx={{ bgcolor: 'black', padding: '11px 25px', borderRadius: '15px' }} onClick={() => navigate('/')}>
+            Let’s Go
+          </Button>
+        </Stack>
       </Stack>
 
+      <Stack
+        sx={{
+          width: '100%',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          position: 'sticky',
+          top: '0',
+          zIndex: '100',
+          padding: '20px 0',
+        }}
+      >
+        <Stack sx={{ width: '80%', paddingTop:"500px" }}>
+          <Typography variant="h3" sx={{ color: 'white', fontWeight: 700 }}>
+            What's an experience?
+          </Typography>
+          <Typography variant="h6" sx={{ color: 'white' }}>
+            It’s an activity that goes beyond the typical tour or class, designed and led by locals all over the world. Show off your city, craft, cause, or culture by hosting an experience.
+          </Typography>
+        </Stack>
+
+        <Stack sx={{ width: '100%', display: 'flex', justifyContent: 'flex-end', alignItems: 'flex-end' }}>
+          <Button
+            variant="outlined"
+            sx={{
+              color: 'white',
+              padding: '11px 20px',
+              borderRadius: '15px',
+              fontSize: '15px',
+              border: '2px solid white',
+              margin: '10px',
+            }}
+            endIcon={isPlaying ? <PauseCircleOutlineIcon /> : <PlayCircleOutlineIcon />}
+            onClick={handlePausePlay}
+          >
+            {isPlaying ? 'Pause' : 'Play'}
+          </Button>
+        </Stack>
+        <Stack
+      direction="row"
+      justifyContent="space-between"
+      alignItems="center"
+      sx={{
+        width: "100%",
+        bgcolor: "white",
+        padding: "90px 200px",
+        gap: "100px",
+      }}
+    >
+      {/* Left Title */}
+      <Typography
+        variant="h4"
+        sx={{
+          color: "gray",
+          fontWeight: 600,
+        }}
+      >
+        Show what you know
+      </Typography>
+
+      {/* Right Description */}
+      <Typography
+        variant="body1"
+        sx={{
+          color: "black",
+          maxWidth: "500px", // Limit the width for better alignment
+          lineHeight: 1.6, // Improve text readability
+        }}
+      >
+        There are experiences of every kind, like cooking, crafting, kayaking,
+        and more. There’s no limit to what you can do. Explore these featured
+        categories.
+      </Typography>
+    </Stack>
+    {/* <Accordions /> */}
+    <Box width="100%" bgcolor="white">
+    <Footer />
+    </Box>
+   
+      </Stack>
+     
+      
+      
       {/* CSS for Animation */}
       <style>
         {`
@@ -98,6 +198,7 @@ const Experience = () => {
           }
         `}
       </style>
+      
     </Box>
   );
 };
