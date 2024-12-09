@@ -16,7 +16,15 @@ const AccordionCard = () => {
     };
 
     return (
-        <div>
+        <div
+        style={{
+            backgroundColor: 'black',
+            opacity: 0.8,
+            width: '100%',
+            padding: '100px', 
+            borderRadius: '8px', 
+        }}
+    >
             <Accordion
                 expanded={expanded}
                 onChange={handleExpansion}
@@ -27,6 +35,7 @@ const AccordionCard = () => {
                         ? {
                             [`& .${accordionClasses.region}`]: {
                                 height: 'auto',
+                              
                             },
                             [`& .${accordionDetailsClasses.root}`]: {
                                 display: 'block',
@@ -40,7 +49,9 @@ const AccordionCard = () => {
                                 display: 'none',
                             },
                         },
-                ]}
+                    
+                 ]}
+                
             >
                 <AccordionSummary
                     expandIcon={<ExpandMoreIcon />}
