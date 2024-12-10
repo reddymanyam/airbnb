@@ -225,11 +225,14 @@ const Navbar = () => {
       </Box>
 
       {/* Date Picker Dialog */}
-      <Dialog open={isDatePickerOpen} onClose={handleDatePickerClose} fullWidth s sx={{
+      <Dialog open={isDatePickerOpen} onClose={handleDatePickerClose} fullWidth  sx={{
         '& .MuiPaper-root': {
           borderRadius: '30px',
           bgcolor: '#F0F8FF' ,
-          padding:"40px"
+          padding:"50px",
+          overflow:"none",
+          maxWidth:'none',
+          width:"auto"
         }
       }}>
         <LocalizationProvider dateAdapter={AdapterDayjs} >
