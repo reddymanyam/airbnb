@@ -21,35 +21,19 @@ import { DateRangeCalendar } from '@mui/x-date-pickers-pro/DateRangeCalendar';
 
 const Navbar = () => {
   const navigate = useNavigate();
-
   const [anchorEl, setAnchorEl] = useState(null);
   const [isDatePickerOpen, setIsDatePickerOpen] = useState(false);
 
-  const open = Boolean(anchorEl);
-
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
-
+  const handleMenuOpen = (event) => setAnchorEl(event.currentTarget);
+  const handleMenuClose = () => setAnchorEl(null);
   const handleNavigation = (path) => {
     navigate(path);
-    handleClose();
-  };
-
-  const handleDatePicker = () => {
-    setIsDatePickerOpen(true);
-  };
-
-  const handleDatePickerClose = () => {
-    setIsDatePickerOpen(false);
+    handleMenuClose();
   };
 
   return (
     <>
+      {/* Navbar Container */}
       <Box
         sx={{
           width: "100%",
@@ -58,9 +42,9 @@ const Navbar = () => {
           display: "flex",
           alignItems: "center",
           position: "sticky",
-          zIndex: 1000,
           top: 0,
-          backgroundColor: "white"
+          zIndex: 1000,
+          backgroundColor: "white",
         }}
       >
         <Box
@@ -68,7 +52,7 @@ const Navbar = () => {
             width: "95%",
             display: "flex",
             margin: "0 auto",
-            justifyContent: { xs: "center", md: "space-between" }
+            justifyContent: { xs: "center", md: "space-between" },
           }}
         >
           {/* Logo */}
@@ -78,16 +62,16 @@ const Navbar = () => {
               flexDirection: "row",
               gap: 1,
               alignItems: "center",
-              cursor: "pointer"
+              cursor: "pointer",
             }}
             onClick={() => handleNavigation('/homepage')}
           >
-            <SiAirbnb size={40} color='#ff385c' />
+            <SiAirbnb size={40} color="#ff385c" />
             <Typography
               sx={{
                 fontWeight: "bold",
                 color: "#ff385c",
-                fontSize: "1.5rem"
+                fontSize: "1.5rem",
               }}
             >
               airbnb
@@ -100,50 +84,41 @@ const Navbar = () => {
             sx={{
               border: "1px solid #E5E4E2",
               borderRadius: "50px",
-              padding: "4px 3px 4px 26px"
+              padding: "4px 26px",
             }}
           >
             <Stack
-              sx={{
-                flexDirection: "row",
-                height: "40px",
-                alignItems: "center",
-                cursor: "pointer",
-                gap: 1
-              }}
+              direction="row"
+              alignItems="center"
+              spacing={1}
+              sx={{ height: "40px", cursor: "pointer" }}
             >
               <Typography
-                variant='body1'
-                color='black'
+                variant="body1"
                 component={Link}
-                to='https://www.google.com/maps'
-                sx={{ textDecoration: 'none' }}
+                to="https://www.google.com/maps"
+                sx={{ textDecoration: "none", color: "black" }}
               >
                 Anywhere
               </Typography>
-              <Divider orientation="vertical" variant="middle" flexItem />
+              <Divider orientation="vertical" flexItem />
               <Typography
-                variant='body1'
-                color='black'
-                onClick={handleDatePicker}
+                variant="body1"
+                onClick={() => setIsDatePickerOpen(true)}
+                sx={{ cursor: "pointer", color: "black" }}
               >
                 Any week
               </Typography>
-              <Divider orientation="vertical" variant="middle" flexItem />
-              <Typography
-                variant='body1'
-                color='gray'
-              >
+              <Divider orientation="vertical" flexItem />
+              <Typography variant="body1" color="gray">
                 Add guests
               </Typography>
               <IconButton
-                aria-label='SearchIcon'
+                aria-label="Search"
                 sx={{
                   color: "white",
                   backgroundColor: "#ff385c",
-                  height: "35px",
-                  width: "35px",
-                  '&:hover': { backgroundColor: '#ff385c' }
+                  '&:hover': { backgroundColor: '#ff385c' },
                 }}
               >
                 <IoSearch />
@@ -154,42 +129,40 @@ const Navbar = () => {
           {/* Right Side Menu */}
           <Box
             sx={{
-              display: { xs: "none", md: 'flex' },
+              display: { xs: "none", md: "flex" },
               alignItems: "center",
-              gap: 2
+              gap: 2,
             }}
           >
             <Typography
-              variant='body1'
-              color='#000000'
-              sx={{ cursor: "pointer" }}
+              variant="body1"
+              sx={{ cursor: "pointer", color: "#000" }}
               onClick={() => handleNavigation('/homepage')}
             >
               Airbnb your home
             </Typography>
-            <IconButton sx={{ fontSize: '20px', color: 'black' }}>
-              <CiGlobe />
+            <IconButton>
+              <CiGlobe fontSize="20px" />
             </IconButton>
             <Paper
               sx={{
                 border: "1px solid #E5E4E2",
                 borderRadius: "50px",
-                padding: "2px"
+                padding: "2px",
               }}
             >
-              <Stack sx={{ display: "flex", flexDirection: "row" }}>
-                <IconButton aria-label='MenuIcon'  onClick={handleClick}
-                  aria-controls={open ? 'account-menu' : undefined}
+              <Stack direction="row">
+                <IconButton
+                  onClick={handleMenuOpen}
+                  aria-controls={anchorEl ? 'account-menu' : undefined}
                   aria-haspopup="true"
-                  aria-expanded={open ? 'true' : undefined}>
-                  <IoMenuOutline color='black' />
+                >
+                  <IoMenuOutline />
                 </IconButton>
                 <IconButton
-                  aria-label='Account'
-                  onClick={handleClick}
-                  aria-controls={open ? 'account-menu' : undefined}
+                  onClick={handleMenuOpen}
+                  aria-controls={anchorEl ? 'account-menu' : undefined}
                   aria-haspopup="true"
-                  aria-expanded={open ? 'true' : undefined}
                 >
                   <AccountCircleTwoToneIcon />
                 </IconButton>
@@ -200,42 +173,38 @@ const Navbar = () => {
           {/* Account Menu */}
           <Menu
             anchorEl={anchorEl}
-            id="account-menu"
-            open={open}
-            onClose={handleClose}
+            open={Boolean(anchorEl)}
+            onClose={handleMenuClose}
           >
-            <MenuItem onClick={() => handleNavigation('/auth')}>
-              Sign up
-            </MenuItem>
-            <MenuItem onClick={() => handleNavigation('/auth')}>
-              Login
-            </MenuItem>
-            <Divider />
-            <MenuItem onClick={() => handleNavigation('/homepage')}>
-              Airbnb your home
-            </MenuItem>
-            <MenuItem onClick={() => handleNavigation('/experience')}>
-              Host an experience
-            </MenuItem>
-            <MenuItem onClick={() => handleNavigation('/helpcenter')}>
-              Help Centre
-            </MenuItem>
+            {[
+              { label: "Sign up", path: "/auth" },
+              { label: "Login", path: "/auth" },
+              { label: "Airbnb your home", path: "/homepage" },
+              { label: "Host an experience", path: "/experience" },
+              { label: "Help Centre", path: "/helpcenter" },
+            ].map(({ label, path }) => (
+              <MenuItem key={label} onClick={() => handleNavigation(path)}>
+                {label}
+              </MenuItem>
+            ))}
           </Menu>
         </Box>
       </Box>
 
       {/* Date Picker Dialog */}
-      <Dialog open={isDatePickerOpen} onClose={handleDatePickerClose} fullWidth  sx={{
-        '& .MuiPaper-root': {
-          borderRadius: '30px',
-          bgcolor: '#F0F8FF' ,
-          padding:"50px",
-          overflow:"none",
-          maxWidth:'none',
-          width:"auto"
-        }
-      }}>
-        <LocalizationProvider dateAdapter={AdapterDayjs} >
+      <Dialog
+        open={isDatePickerOpen}
+        onClose={() => setIsDatePickerOpen(false)}
+        fullWidth
+        sx={{
+          '& .MuiPaper-root': {
+            borderRadius: "30px",
+            bgcolor: "#F0F8FF",
+            padding: "50px",
+          },
+        }}
+      >
+        <LocalizationProvider dateAdapter={AdapterDayjs}>
           <DateRangeCalendar />
         </LocalizationProvider>
       </Dialog>
