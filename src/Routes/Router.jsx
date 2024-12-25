@@ -1,44 +1,75 @@
-import Auth from "../Auth/Auth";
-import Layout from "../components/Layout/Layout";
-import MainLayout from "../components/MainLayout/MainLayout";
-import Dashboard from "../Pages/Dashboard/Dashboard";
-import Experience from "../Pages/Experience/Experience";
-import HelpCenter from "../Pages/Help/HelpCenter";
-import HomePage from "../Pages/Home/HomePage";
+import React, { Suspense } from "react";
+
+const Auth = React.lazy(() => import("../Auth/Auth"));
+const Layout = React.lazy(() => import("../components/Layout/Layout"));
+const MainLayout = React.lazy(() => import("../components/MainLayout/MainLayout"));
+const Dashboard = React.lazy(() => import("../Pages/Dashboard/Dashboard"));
+const Experience = React.lazy(() => import("../Pages/Experience/Experience"));
+const HelpCenter = React.lazy(() => import("../Pages/Help/HelpCenter"));
+const HomePage = React.lazy(() => import("../Pages/Home/HomePage"));
+
 
 const Router = [
     {
         path: "/",
-        element: <MainLayout />,
+        element: (
+            <Suspense fallback={<div>Loading...</div>}>
+                <MainLayout />
+            </Suspense>
+        ),
         children: [
             {
-                index: true, // Use index for the default route instead of path:'/'
-                element: <Dashboard />
-            }
-        ]
+                index: true,
+                element: (
+                    <Suspense fallback={<div>Loading...</div>}>
+                        <Dashboard />
+                    </Suspense>
+                ),
+            },
+        ],
     },
     {
         path: "/",
-        element: <Layout />,
+        element: (
+            <Suspense fallback={<div>Loading...</div>}>
+                <Layout />
+            </Suspense>
+        ),
         children: [
             {
                 path: "auth",
-                element: <Auth />
+                element: (
+                    <Suspense fallback={<div>Loading...</div>}>
+                        <Auth />
+                    </Suspense>
+                ),
             },
             {
-                path: "homepage", 
-                element: <HomePage />
+                path: "homepage",
+                element: (
+                    <Suspense fallback={<div>Loading...</div>}>
+                        <HomePage />
+                    </Suspense>
+                ),
             },
             {
-                path: "helpcenter", 
-                element: <HelpCenter />
+                path: "helpcenter",
+                element: (
+                    <Suspense fallback={<div>Loading...</div>}>
+                        <HelpCenter />
+                    </Suspense>
+                ),
             },
             {
-                path: "experience", 
-                element: <Experience />
-            }
-        ]
-    }
+                path: "experience",
+                element: (
+                    <Suspense fallback={<div>Loading...</div>}>
+                        <Experience />
+                    </Suspense>
+                ),
+            },
+        ],
+    },
 ];
 
 export default Router;
