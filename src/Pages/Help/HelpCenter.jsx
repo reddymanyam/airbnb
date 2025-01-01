@@ -1,9 +1,31 @@
-import { Box, Divider, Menu, MenuItem, Typography } from '@mui/material'
+import { Box, Divider, IconButton, Menu, MenuItem, Paper, Stack, Typography } from '@mui/material'
 import React from 'react'
+import { CiGlobe } from 'react-icons/ci'
 import { IoMenuOutline } from 'react-icons/io5'
 import { SiAirbnb } from 'react-icons/si'
 
 const HelpCenter = () => {
+
+  const navigate = useNavigate();
+
+  const [anchorEl, setAnchorEl] = useState(null);
+  const [isDatePickerOpen, setIsDatePickerOpen] = useState(false);
+
+  const open = Boolean(anchorEl);
+
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  const handleNavigation = (path) => {
+    navigate(path);
+    handleClose();
+  };
+
   return (
    <>
     <Box sx={{ width:"100%", height:"100vh", background:"white"}}>
