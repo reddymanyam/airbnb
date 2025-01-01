@@ -1,7 +1,7 @@
 import { Box, Divider, IconButton, Menu, MenuItem, Paper, Stack, TextField, Typography } from '@mui/material'
 import React, { useState } from 'react'
 import { CiGlobe } from 'react-icons/ci'
-import { IoMenuOutline } from 'react-icons/io5'
+import { IoMenuOutline, IoSearch } from 'react-icons/io5'
 import AccountCircleTwoToneIcon from '@mui/icons-material/AccountCircleTwoTone';
 import { SiAirbnb } from 'react-icons/si'
 import { useNavigate } from 'react-router-dom'
@@ -108,7 +108,12 @@ const HelpCenter = () => {
       </Box>
       <Box sx={{ width:"100%", display:"flex",flexDirection:"column", justifyContent:"center", alignItems:"center", padding:"50px"}}>
             <Typography variant="h3" component="h2">Hi, how can we help?</Typography>
+            <Box sx={{width:"100%", display:"flex", flexDirection:"row", justifyContent:"center", alignItems:"center", gap:"10px"}}>
             <TextField  label="Search how to's and more" sx={{width:"50%", marginTop:"20px", '& .MuiOutlinedInput-root':{borderRadius: "40px", }}}/>
+            <IconButton aria-label='SearchIcon'sx={{color: "white",backgroundColor: "#ff385c",height: "45px",width: "45px",'&:hover': { backgroundColor: '#ff385c' }}}>
+                <IoSearch />
+            </IconButton>
+            </Box>
       </Box>
     </Box>
    </>
