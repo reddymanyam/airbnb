@@ -1,15 +1,16 @@
-import { Box, Divider, IconButton, Menu, MenuItem, Paper, Stack, Typography } from '@mui/material'
-import React from 'react'
+import { Box, Divider, IconButton, Menu, MenuItem, Paper, Stack, TextField, Typography } from '@mui/material'
+import React, { useState } from 'react'
 import { CiGlobe } from 'react-icons/ci'
 import { IoMenuOutline } from 'react-icons/io5'
+import AccountCircleTwoToneIcon from '@mui/icons-material/AccountCircleTwoTone';
 import { SiAirbnb } from 'react-icons/si'
+import { useNavigate } from 'react-router-dom'
 
 const HelpCenter = () => {
 
   const navigate = useNavigate();
 
   const [anchorEl, setAnchorEl] = useState(null);
-  const [isDatePickerOpen, setIsDatePickerOpen] = useState(false);
 
   const open = Boolean(anchorEl);
 
@@ -104,6 +105,10 @@ const HelpCenter = () => {
               Help Centre
             </MenuItem>
           </Menu>
+      </Box>
+      <Box sx={{ width:"100%", display:"flex",flexDirection:"column", justifyContent:"center", alignItems:"center", padding:"50px"}}>
+            <Typography variant="h3" component="h2">Hi, how can we help?</Typography>
+            <TextField  label="Search how to's and more" sx={{width:"50%", marginTop:"20px", '& .MuiOutlinedInput-root':{borderRadius: "40px", }}}/>
       </Box>
     </Box>
    </>
