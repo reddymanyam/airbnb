@@ -1,4 +1,4 @@
-import { Box, Divider, IconButton, Menu, MenuItem, Paper, Stack, TextField, Typography } from '@mui/material'
+import { Box, Divider, IconButton, InputAdornment, Menu, MenuItem, Paper, Stack, TextField, Typography } from '@mui/material'
 import React, { useState } from 'react'
 import { CiGlobe } from 'react-icons/ci'
 import { IoMenuOutline, IoSearch } from 'react-icons/io5'
@@ -28,15 +28,15 @@ const HelpCenter = () => {
   };
 
   return (
-   <>
-    <Box sx={{ width:"100%", height:"100vh", background:"white"}}>
-      <Box sx={{ width:"90%", height:"80px",display:"flex", alignItems:"center",justifyContent:"space-between", position:"sticky", top:"0", zIndex:"1000", margin:"0 auto", backgroundColor:"white"}}>
-        <Box sx={{ display:"flex", alignItems:"center", gap:"10px"}}>
-          <SiAirbnb size={40} color='black' />
-          <Typography variant="h6" component="h2">Help Center</Typography>
-        </Box>
-         {/* Right Side Menu */}
-         <Box
+    <>
+      <Box sx={{ width: "100%", height: "100vh", background: "white" }}>
+        <Box sx={{ width: "90%", height: "80px", display: "flex", alignItems: "center", justifyContent: "space-between", position: "sticky", top: "0", zIndex: "1000", margin: "0 auto", backgroundColor: "white" }}>
+          <Box sx={{ display: "flex", alignItems: "center", gap: "10px" }}>
+            <SiAirbnb size={40} color='black' />
+            <Typography variant="h6" component="h2">Help Center</Typography>
+          </Box>
+          {/* Right Side Menu */}
+          <Box
             sx={{
               display: { xs: "none", md: 'flex' },
               alignItems: "center",
@@ -62,7 +62,7 @@ const HelpCenter = () => {
               }}
             >
               <Stack sx={{ display: "flex", flexDirection: "row" }}>
-                <IconButton aria-label='MenuIcon'  onClick={handleClick}
+                <IconButton aria-label='MenuIcon' onClick={handleClick}
                   aria-controls={open ? 'account-menu' : undefined}
                   aria-haspopup="true"
                   aria-expanded={open ? 'true' : undefined}>
@@ -105,18 +105,41 @@ const HelpCenter = () => {
               Help Centre
             </MenuItem>
           </Menu>
+        </Box>
+        <Box sx={{ width: "100%", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", padding: "50px" }}>
+          <Typography variant="h3" component="h2">Hi, how can we help?</Typography>
+          <Box sx={{ width: "100%", display: "flex", flexDirection: "row", justifyContent: "center", alignItems: "center", gap: "10px" }}>
+            <TextField
+              label="Search how to's and more"
+              variant="outlined"
+              sx={{
+                width: "50%",
+                marginTop: "20px",
+                '& .MuiOutlinedInput-root': {
+                  borderRadius: "40px",
+                },
+              }}
+              InputProps={{
+                endAdornment: (
+                  <InputAdornment position="end">
+                    <IconButton
+                      aria-label="search"
+                      sx={{
+                        color: "white",
+                        backgroundColor: "#ff385c",
+                        height: "45px",
+                        width: "45px",
+                        '&:hover': { backgroundColor: "#ff385c" },
+                      }}
+                    >
+                      <IoSearch />
+                    </IconButton>
+                  </InputAdornment>)
+              }} />
+          </Box>
+        </Box>
       </Box>
-      <Box sx={{ width:"100%", display:"flex",flexDirection:"column", justifyContent:"center", alignItems:"center", padding:"50px"}}>
-            <Typography variant="h3" component="h2">Hi, how can we help?</Typography>
-            <Box sx={{width:"100%", display:"flex", flexDirection:"row", justifyContent:"center", alignItems:"center", gap:"10px"}}>
-            <TextField  label="Search how to's and more" sx={{width:"50%", marginTop:"20px", '& .MuiOutlinedInput-root':{borderRadius: "40px", }}}/>
-            <IconButton aria-label='SearchIcon'sx={{color: "white",backgroundColor: "#ff385c",height: "45px",width: "45px",'&:hover': { backgroundColor: '#ff385c' }}}>
-                <IoSearch />
-            </IconButton>
-            </Box>
-      </Box>
-    </Box>
-   </>
+    </>
   )
 }
 
