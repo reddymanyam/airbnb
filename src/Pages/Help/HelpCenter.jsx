@@ -1,5 +1,6 @@
-import { Box, Typography } from '@mui/material'
+import { Box, Divider, Menu, MenuItem, Typography } from '@mui/material'
 import React from 'react'
+import { IoMenuOutline } from 'react-icons/io5'
 import { SiAirbnb } from 'react-icons/si'
 
 const HelpCenter = () => {
@@ -11,8 +12,77 @@ const HelpCenter = () => {
           <SiAirbnb size={40} color='black' />
           <Typography variant="h6" component="h2">Help Center</Typography>
         </Box>
-      </Box>
+         {/* Right Side Menu */}
+         <Box
+            sx={{
+              display: { xs: "none", md: 'flex' },
+              alignItems: "center",
+              gap: 2
+            }}
+          >
+            <Typography
+              variant='body1'
+              color='#000000'
+              sx={{ cursor: "pointer" }}
+              onClick={() => handleNavigation('/homepage')}
+            >
+              Airbnb your home
+            </Typography>
+            <IconButton sx={{ fontSize: '20px', color: 'black' }}>
+              <CiGlobe />
+            </IconButton>
+            <Paper
+              sx={{
+                border: "1px solid #E5E4E2",
+                borderRadius: "50px",
+                padding: "2px"
+              }}
+            >
+              <Stack sx={{ display: "flex", flexDirection: "row" }}>
+                <IconButton aria-label='MenuIcon'  onClick={handleClick}
+                  aria-controls={open ? 'account-menu' : undefined}
+                  aria-haspopup="true"
+                  aria-expanded={open ? 'true' : undefined}>
+                  <IoMenuOutline color='black' />
+                </IconButton>
+                <IconButton
+                  aria-label='Account'
+                  onClick={handleClick}
+                  aria-controls={open ? 'account-menu' : undefined}
+                  aria-haspopup="true"
+                  aria-expanded={open ? 'true' : undefined}
+                >
+                  <AccountCircleTwoToneIcon />
+                </IconButton>
+              </Stack>
+            </Paper>
+          </Box>
 
+          {/* Account Menu */}
+          <Menu
+            anchorEl={anchorEl}
+            id="account-menu"
+            open={open}
+            onClose={handleClose}
+          >
+            <MenuItem onClick={() => handleNavigation('/auth')}>
+              Sign up
+            </MenuItem>
+            <MenuItem onClick={() => handleNavigation('/auth')}>
+              Login
+            </MenuItem>
+            <Divider />
+            <MenuItem onClick={() => handleNavigation('/homepage')}>
+              Airbnb your home
+            </MenuItem>
+            <MenuItem onClick={() => handleNavigation('/experience')}>
+              Host an experience
+            </MenuItem>
+            <MenuItem onClick={() => handleNavigation('/helpcenter')}>
+              Help Centre
+            </MenuItem>
+          </Menu>
+      </Box>
     </Box>
    </>
   )
