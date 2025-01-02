@@ -1,6 +1,14 @@
 import React, { useState } from 'react';
-import { Box, Card, CardActionArea, CardContent, CardMedia, Typography } from '@mui/material';
-import Grid from '@mui/material/Grid';
+import {
+  Box,
+  Card,
+  CardActionArea,
+  CardContent,
+  CardMedia,
+  Typography,
+  Grid,
+  Button,
+} from '@mui/material';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
@@ -72,14 +80,22 @@ const ImageCarousel = ({ location, currentIndex, onPrevious, onNext }) => {
   );
 };
 
-const Cards = () => {
+const Cards = ({ selectedCategory }) => {
   const [currentIndices, setCurrentIndices] = useState(locations.map(() => 0));
+
+  // Filter locations based on the selected category
+  const filteredLocations =
+    selectedCategory === 'All'
+      ? locations
+      : locations.filter((location) => location.category === selectedCategory);
 
   const handlePrevious = (index) => {
     setCurrentIndices((prevIndices) => {
       const newIndices = [...prevIndices];
       const isFirstSlide = newIndices[index] === 0;
-      newIndices[index] = isFirstSlide ? locations[index].locationImages.length - 1 : newIndices[index] - 1;
+      newIndices[index] = isFirstSlide
+        ? locations[index].locationImages.length - 1
+        : newIndices[index] - 1;
       return newIndices;
     });
   };
@@ -96,7 +112,7 @@ const Cards = () => {
   return (
     <Box sx={{ width: '100%', boxSizing: 'border-box' }}>
       <Grid container spacing={2} sx={{ padding: 2, paddingX: 5 }}>
-        {locations.map((location, index) => (
+        {filteredLocations.map((location, index) => (
           <Grid item key={index} xs={12} sm={6} md={4} lg={3}>
             <ImageCarousel
               location={location}
@@ -110,5 +126,6 @@ const Cards = () => {
     </Box>
   );
 };
+
 
 export default Cards;
