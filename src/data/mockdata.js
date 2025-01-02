@@ -24,6 +24,7 @@ export const locations = [
     price: '$14,999 CAD night',
     isNew: true,
     rating: 4.5,
+    category: 'lakeFront',
   },
   {
     id: 2,
@@ -51,6 +52,8 @@ export const locations = [
     price: '$3000 CAD night',
     isNew: false,
     rating: 4.99,
+    category: 'lakeFront',
+
   },
   {
     id: 3,
@@ -77,6 +80,8 @@ export const locations = [
     price: '$2511 CAD night',
     isNew: true,
     rating: 4.5,
+    category: 'sharedhomes',
+
   },
   {
     id: 4,
@@ -103,6 +108,8 @@ export const locations = [
     price: '$208 CAD night',
     isNew: false,
     rating: 4.2,
+    category: 'lakeFront',
+
   },
   {
     id: 5,
@@ -129,6 +136,8 @@ export const locations = [
     price: '$243 CAD night',
     isNew: true,
     rating: 4.1,
+    category: 'lakeFront',
+
   },
   {
     id: 6,
@@ -155,6 +164,8 @@ export const locations = [
     price: '$698 CAD night',
     isNew: false,
     rating: 4.6,
+    category: 'lakeFront',
+
   },
   {
     id: 7,
@@ -181,6 +192,8 @@ export const locations = [
     price: '$467 CAD night',
     isNew: true,
     rating: 4.7,
+    category: 'sharedhomes',
+
   },
   {
     id: 8,
@@ -207,6 +220,8 @@ export const locations = [
     price: '$1,767 CAD night',
     isNew: false,
     rating: 4.8,
+    category: 'sharedhomes',
+
   },
   {
     id: 9,
@@ -233,6 +248,8 @@ export const locations = [
     price: '$910 CAD night',
     isNew: true,
     rating: 4.3,
+    category: 'sharedhomes',
+
   },
   {
     id: 10,
@@ -259,6 +276,8 @@ export const locations = [
     price: '$629 CAD night',
     isNew: false,
     rating: 4.6,
+    category: 'omg',
+
   },
   {
     id: 11,
@@ -285,6 +304,8 @@ export const locations = [
     price: '$2,595 CAD night',
     isNew: false,
     rating: 4.1,
+    category: 'sharedhomes',
+
   },
   {
     id: 12,
@@ -311,6 +332,8 @@ export const locations = [
     price: '$4,467 CAD night',
     isNew: false,
     rating: 4.2,
+    category: 'sharedhomes',
+
   },
   {
     id: 13,
@@ -337,6 +360,7 @@ export const locations = [
     price: '$358 CAD night',
     isNew: true,
     rating: 4.5,
+    category: 'sharedhomes',
   },
   {
     id: 14,
@@ -363,6 +387,8 @@ export const locations = [
     price: '$777 CAD night',
     isNew: true,
     rating: 4.8,
+    category: 'sharedhomes',
+
   },
   {
     id: 15,
@@ -389,6 +415,8 @@ export const locations = [
     price: '$2,999 CAD night',
     isNew: true,
     rating: 4.88,
+    category: 'sharedhomes',
+
   },
   {
     id: 16,
@@ -415,6 +443,8 @@ export const locations = [
     price: '$500 CAD night',
     isNew: false,
     rating: 4.2,
+    category: 'sharedhomes',
+
   },
   {
     id: 17,
@@ -441,6 +471,9 @@ export const locations = [
     price: '$3,369 CAD night',
     isNew: false,
     rating: 4.1,
+    category: 'design',
+
+
   },
   {
     id: 18,
@@ -468,6 +501,8 @@ export const locations = [
     price: '$1,129 CAD night',
     isNew: true,
     rating: 4.6,
+    category: 'nationalparks',
+
   },
   {
     id: 19,
@@ -494,6 +529,8 @@ export const locations = [
     price: '$3200 CAD night',
     isNew: true,
     rating: 4.7,
+    category: 'design',
+
   },
   {
     id: 20,
@@ -520,5 +557,7 @@ export const locations = [
     price: '$14,999 CAD night',
     isNew: false,
     rating: 4.5,
+    category: 'sharedhomes',
+
   },
 ];
