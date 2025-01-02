@@ -24,7 +24,7 @@ export const locations = [
     price: '$14,999 CAD night',
     isNew: true,
     rating: 4.5,
-    category: 'lakeFront',
+    category: 'LakeFront',
   },
   {
     id: 2,
@@ -52,7 +52,7 @@ export const locations = [
     price: '$3000 CAD night',
     isNew: false,
     rating: 4.99,
-    category: 'lakeFront',
+    category: 'LakeFront',
 
   },
   {
@@ -80,7 +80,7 @@ export const locations = [
     price: '$2511 CAD night',
     isNew: true,
     rating: 4.5,
-    category: 'sharedhomes',
+    category: 'Shared Homes',
 
   },
   {
@@ -108,7 +108,7 @@ export const locations = [
     price: '$208 CAD night',
     isNew: false,
     rating: 4.2,
-    category: 'lakeFront',
+    category: 'LakeFront',
 
   },
   {
@@ -136,7 +136,7 @@ export const locations = [
     price: '$243 CAD night',
     isNew: true,
     rating: 4.1,
-    category: 'lakeFront',
+    category: 'LakeFront',
 
   },
   {
@@ -164,7 +164,7 @@ export const locations = [
     price: '$698 CAD night',
     isNew: false,
     rating: 4.6,
-    category: 'lakeFront',
+    category: 'LakeFront',
 
   },
   {
@@ -192,7 +192,7 @@ export const locations = [
     price: '$467 CAD night',
     isNew: true,
     rating: 4.7,
-    category: 'sharedhomes',
+    category: 'Shared Homes',
 
   },
   {
@@ -220,7 +220,7 @@ export const locations = [
     price: '$1,767 CAD night',
     isNew: false,
     rating: 4.8,
-    category: 'sharedhomes',
+    category: 'Shared Homes',
 
   },
   {
@@ -248,7 +248,7 @@ export const locations = [
     price: '$910 CAD night',
     isNew: true,
     rating: 4.3,
-    category: 'sharedhomes',
+    category: 'Shared Homes',
 
   },
   {
@@ -276,7 +276,7 @@ export const locations = [
     price: '$629 CAD night',
     isNew: false,
     rating: 4.6,
-    category: 'omg',
+    category: 'OMG!',
 
   },
   {
@@ -304,7 +304,7 @@ export const locations = [
     price: '$2,595 CAD night',
     isNew: false,
     rating: 4.1,
-    category: 'sharedhomes',
+    category: 'Shared Homes',
 
   },
   {
@@ -332,7 +332,7 @@ export const locations = [
     price: '$4,467 CAD night',
     isNew: false,
     rating: 4.2,
-    category: 'sharedhomes',
+    category: 'Shared Homes',
 
   },
   {
@@ -360,7 +360,7 @@ export const locations = [
     price: '$358 CAD night',
     isNew: true,
     rating: 4.5,
-    category: 'sharedhomes',
+    category: 'Shared Homes',
   },
   {
     id: 14,
@@ -387,7 +387,7 @@ export const locations = [
     price: '$777 CAD night',
     isNew: true,
     rating: 4.8,
-    category: 'sharedhomes',
+    category: 'Shared Homes',
 
   },
   {
@@ -415,7 +415,7 @@ export const locations = [
     price: '$2,999 CAD night',
     isNew: true,
     rating: 4.88,
-    category: 'sharedhomes',
+    category: 'Shared Homes',
 
   },
   {
@@ -443,7 +443,7 @@ export const locations = [
     price: '$500 CAD night',
     isNew: false,
     rating: 4.2,
-    category: 'sharedhomes',
+    category: 'Shared Homes',
 
   },
   {
@@ -471,7 +471,7 @@ export const locations = [
     price: '$3,369 CAD night',
     isNew: false,
     rating: 4.1,
-    category: 'design',
+    category: 'Bed & Breakfast',
 
 
   },
@@ -501,7 +501,7 @@ export const locations = [
     price: '$1,129 CAD night',
     isNew: true,
     rating: 4.6,
-    category: 'nationalparks',
+    category: 'National Parks',
 
   },
   {
@@ -529,7 +529,7 @@ export const locations = [
     price: '$3200 CAD night',
     isNew: true,
     rating: 4.7,
-    category: 'design',
+    category: 'Bed & Breakfast',
 
   },
   {
@@ -557,7 +557,114 @@ export const locations = [
     price: '$14,999 CAD night',
     isNew: false,
     rating: 4.5,
-    category: 'sharedhomes',
+    category: 'Shared Homes',
 
+  },
+  {
+    id: 21,
+    locationImages: [
+      {
+        id: 1,
+        url: 'https://media.tacdn.com/media/attractions-content--1x-1/0b/39/7a/04.jpg',
+      },
+      {
+        id: 2,
+        url: 'https://bestarctic.com/wp-content/uploads/2023/11/284321-768x447.jpg',
+      },
+      {
+        id: 3,
+        url: 'https://www.magazinehorse.com/wp-content/uploads/2022/09/noruega-viajes-parques-nacionales-magazinehorse.png',
+      },
+      {
+        id: 4,
+        url: 'https://churchillwild.com/wp-content/uploads/2019/04/Wildlife_1st-Place_Gordon-Fox_PBPS_2018.jpg',
+      },
+    ],
+    location: 'Arcitic, Arc',
+    days: 'Oct 2-9',
+    price: '$14,999 CAD night',
+    isNew: false,
+    rating: 4.5,
+    category: 'Arctic',
+  },
+  {
+    id: 22,
+    locationImages: [
+      {
+        id: 1,
+        url: 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/06/38/8a/5f/ersfjordbotn-kystferie.jpg?w=700&h=-1&s=1',
+      },
+      {
+        id: 2,
+        url: 'https://www.campervannorway.com/assets/img/blog/495/shutterstock_1384745927-compressed.jpg',
+      },
+      {
+        id: 3,
+        url: 'https://mediaim.expedia.com/destination/2/ceef8e4dc3fabcdc045fd166f72cafee.jpg',
+      },
+      {
+        id: 4,
+        url: 'https://churchillwild.com/wp-content/uploads/2019/04/Wildlife_1st-Place_Gordon-Fox_PBPS_2018.jpg',
+      },
+    ],
+    location: 'Arctic Circle, Norway',
+    days: 'Feb 12-19',
+    price: '$10,999 CAD night',
+    isNew: false,
+    rating: 4.5,
+    category: 'Arctic',
+  },{
+    id: 23,
+    locationImages: [
+      {
+        id: 1,
+        url: 'https://www.magazinehorse.com/wp-content/uploads/2022/09/noruega-viajes-parques-nacionales-magazinehorse.png',
+      },
+      {
+        id: 2,
+        url: 'https://bestarctic.com/wp-content/uploads/2023/11/284321-768x447.jpg',
+      },
+      {
+        id: 3,
+        url: 'https://media.tacdn.com/media/attractions-content--1x-1/0b/39/7a/04.jpg',
+      },
+      {
+        id: 4,
+        url: 'https://churchillwild.com/wp-content/uploads/2019/04/Wildlife_1st-Place_Gordon-Fox_PBPS_2018.jpg',
+      },
+    ],
+    location: 'Norway',
+    days: 'Oct 2-9',
+    price: '$14,999 CAD night',
+    isNew: false,
+    rating: 4.5,
+    category: 'Arctic',
+  },
+  {
+    id: 24,
+    locationImages: [
+      {
+        id: 1,
+        url: 'https://good-nature-blog-uploads.s3.amazonaws.com/uploads/2011/01/northern-lights.jpg',
+      },
+      {
+        id: 2,
+        url: 'https://www.campervannorway.com/assets/img/blog/495/shutterstock_1384745927-compressed.jpg',
+      },
+      {
+        id: 3,
+        url: 'https://mediaim.expedia.com/destination/2/ceef8e4dc3fabcdc045fd166f72cafee.jpg',
+      },
+      {
+        id: 4,
+        url: 'https://churchillwild.com/wp-content/uploads/2019/04/Wildlife_1st-Place_Gordon-Fox_PBPS_2018.jpg',
+      },
+    ],
+    location: 'Northan Lights, Norway',
+    days: 'Feb 12-19',
+    price: '$10,999 CAD night',
+    isNew: false,
+    rating: 4.5,
+    category: 'Arctic',
   },
 ];
