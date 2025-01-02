@@ -1,5 +1,5 @@
+import React, { useState } from 'react';
 import { Box, Container, Tab, Tabs } from '@mui/material';
-import React, { useState } from 'react'
 import {
   MdOutlineApartment,
   MdHouseSiding,
@@ -22,9 +22,10 @@ import {
 import { AiOutlineCoffee } from 'react-icons/ai';
 import { FaCampground, FaUmbrellaBeach, FaSwimmingPool } from 'react-icons/fa';
 import { RiEarthquakeFill } from 'react-icons/ri';
+import Cards from '../Cards/Cards';
 
 const locationsTab = [
-  { id: 1, label: 'Design', icon: <MdOutlineApartment size={24} /> },
+  { id: 1, label: 'All', icon: <MdOutlineApartment size={24} /> },
   { id: 2, label: 'Arctic', icon: <BsSnow size={24} /> },
   { id: 3, label: 'Shared Homes', icon: <MdHouseSiding size={24} /> },
   { id: 4, label: 'LakeFront', icon: <MdOutlineWater size={24} /> },
@@ -47,24 +48,61 @@ const locationsTab = [
 ];
 
 const Options = () => {
-    const [value, setValue] = useState(0);
+  const [value, setValue] = useState(0);
+  const [selectedCategory, setSelectedCategory] = useState('All');
 
-    const handleChange =(e,newValue) =>{
-        setValue(newValue)
-    }
+  const handleChange = (e, newValue) => {
+    setValue(newValue);
+    setSelectedCategory(locationsTab[newValue].label);
+  };
+
   return (
-    <Container maxWidth="xl" sx={{position:"sticky", top:"80px", zIndex:1000, backgroundColor:"white"}}>
-        <Box sx={{display:"flex", flexGrow:1, px:{xs:0, md:2}, alignItems:"center", mt:2, mb:2, }}>
-          <Tabs value={value} onChange={handleChange} variant='scrollable' scrollButtons sx={{['&.${tabsClasses.scrollButtons}']:{
-            '&.Mui-disabled':{opacity:0.3},
-          }, '& .MuiTabs-indicator':{color:"black"} }}>
-              {locationsTab.map((tab)=>{
-                return <Tab key={tab.id} icon={tab.icon} label={tab.label} sx={{color:"black"}} />;
-              })}
+    <>
+      <Container
+        maxWidth="xl"
+        sx={{
+          position: 'sticky',
+          top: '80px',
+          zIndex: 1000,
+          backgroundColor: 'white',
+        }}
+      >
+        <Box
+          sx={{
+            display: 'flex',
+            flexGrow: 1,
+            px: { xs: 0, md: 2 },
+            alignItems: 'center',
+            mt: 2,
+            mb: 2,
+          }}
+        >
+          <Tabs
+            value={value}
+            onChange={handleChange}
+            variant="scrollable"
+            scrollButtons
+            sx={{
+              ['&.${tabsClasses.scrollButtons}']: {
+                '&.Mui-disabled': { opacity: 0.3 },
+              },
+              '& .MuiTabs-indicator': { color: 'black' },
+            }}
+          >
+            {locationsTab.map((tab) => (
+              <Tab
+                key={tab.id}
+                icon={tab.icon}
+                label={tab.label}
+                sx={{ color: 'black' }}
+              />
+            ))}
           </Tabs>
         </Box>
-    </Container>
-  )
-}
+      </Container>
+      <Cards selectedCategory={selectedCategory} />
+    </>
+  );
+};
 
-export default Options
+export default Options;
