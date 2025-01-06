@@ -12,6 +12,7 @@ const App = () => {
 
   // Return the structure
   return (
+    
     <ThemeProvider theme={theme}>
       <CssBaseline />
       {routing}
