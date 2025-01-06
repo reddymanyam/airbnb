@@ -124,11 +124,41 @@ const Cards = ({ selectedCategory }) => {
             </Grid>
           ))
         ) : (
-          <Grid item xs={12}>
-            <Box sx={{ textAlign: 'center', marginTop: 4, fontStyle: 'italic' }}>
+                <Grid item xs={12} >
+            <Box
+              sx={{
+                textAlign: 'center',
+                marginTop: 4,
+                fontStyle: 'italic',
+                fontSize: '32px',
+                fontWeight: 'bold',
+                background: 'linear-gradient(135deg, #30cfd0 0%, #330867 100%)',
+                color: 'white',
+                padding: '20px',
+                borderRadius: '12px',
+                boxShadow: '0 4px 15px rgba(0, 0, 0, 0.2)',
+                animation: 'fadeIn 2s ease-in-out',
+                width: "340px",
+              }}
+            >
               We will update it very soon.
             </Box>
+            <style>
+              {`
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    `}
+            </style>
           </Grid>
+
         )}
       </Grid>
     </Box>
