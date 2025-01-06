@@ -112,18 +112,27 @@ const Cards = ({ selectedCategory }) => {
   return (
     <Box sx={{ width: '100%', boxSizing: 'border-box' }}>
       <Grid container spacing={2} sx={{ padding: 2, paddingX: 5 }}>
-        {filteredLocations.map((location, index) => (
-          <Grid item key={index} xs={12} sm={6} md={4} lg={3}>
-            <ImageCarousel
-              location={location}
-              currentIndex={currentIndices[index]}
-              onPrevious={() => handlePrevious(index)}
-              onNext={() => handleNext(index)}
-            />
+        {filteredLocations.length > 0 ? (
+          filteredLocations.map((location, index) => (
+            <Grid item key={index} xs={12} sm={6} md={4} lg={3}>
+              <ImageCarousel
+                location={location}
+                currentIndex={currentIndices[index]}
+                onPrevious={() => handlePrevious(index)}
+                onNext={() => handleNext(index)}
+              />
+            </Grid>
+          ))
+        ) : (
+          <Grid item xs={12}>
+            <Box sx={{ textAlign: 'center', marginTop: 4, fontStyle: 'italic' }}>
+              We will update it very soon.
+            </Box>
           </Grid>
-        ))}
+        )}
       </Grid>
     </Box>
+
   );
 };
 
