@@ -40,14 +40,14 @@ const ImageCarousel = ({ location, currentIndex, onPrevious, onNext }) => {
             position: 'absolute',
             top: theme.spacing(1),
             right: theme.spacing(1),
-            color: theme.palette.primary.main,
+            color: theme.palette.error.main,
           }}
         />
         <KeyboardArrowLeftIcon
           className="hoverIcons"
           sx={{
             position: 'absolute',
-            bottom: '50%',
+            bottom: '60%',
             left: theme.spacing(1),
             cursor: 'pointer',
           }}
@@ -57,7 +57,7 @@ const ImageCarousel = ({ location, currentIndex, onPrevious, onNext }) => {
           className="hoverIcons"
           sx={{
             position: 'absolute',
-            bottom: '50%',
+            bottom: '60%',
             right: theme.spacing(1),
             cursor: 'pointer',
           }}
