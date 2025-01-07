@@ -13,7 +13,7 @@ import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import { useTheme } from '@mui/material/styles';
 import { locations } from '../../data/mockdata';
-
+// ImageCarousel component remains the same
 const ImageCarousel = ({ location, currentIndex, onPrevious, onNext }) => {
   const theme = useTheme();
   return (
@@ -78,21 +78,17 @@ const ImageCarousel = ({ location, currentIndex, onPrevious, onNext }) => {
     </Card>
   );
 };
-
 const Cards = ({ selectedCategory }) => {
   const [currentIndices, setCurrentIndices] = useState([]);
-
   // Filter locations based on the selected category
   const filteredLocations =
     selectedCategory === 'All'
       ? locations
       : locations.filter((location) => location.category === selectedCategory);
-
   // Adjust current indices dynamically based on filtered locations
   React.useEffect(() => {
     setCurrentIndices(Array(filteredLocations.length).fill(0));
   }, [filteredLocations]);
-
   const handlePrevious = (index) => {
     setCurrentIndices((prevIndices) => {
       const newIndices = [...prevIndices];
@@ -103,7 +99,6 @@ const Cards = ({ selectedCategory }) => {
       return newIndices;
     });
   };
-
   const handleNext = (index) => {
     setCurrentIndices((prevIndices) => {
       const newIndices = [...prevIndices];
@@ -113,22 +108,10 @@ const Cards = ({ selectedCategory }) => {
       return newIndices;
     });
   };
-
   return (
     <Box sx={{ width: '100%', boxSizing: 'border-box' }}>
       <Grid container spacing={2} sx={{ padding: 2, paddingX: 5 }}>
-        {filteredLocations.length > 0 ? (
-          filteredLocations.map((location, index) => (
-            <Grid item key={index} xs={12} sm={6} md={4} lg={3}>
-              <ImageCarousel
-                location={location}
-                currentIndex={currentIndices[index] || 0}
-                onPrevious={() => handlePrevious(index)}
-                onNext={() => handleNext(index)}
-              />
-            </Grid>
-          ))
-        ) : (
+        {filteredLocations.length === 0 ? (
           <Grid item xs={12}>
             <Box
               sx={{
@@ -137,7 +120,7 @@ const Cards = ({ selectedCategory }) => {
                 fontStyle: 'italic',
                 fontSize: '32px',
                 fontWeight: 'bold',
-                background: 'linear-gradient(135deg, #30cfd0 0%, #330867 100%)',
+                background: 'linear-gradient(135deg, #30CFD0 0%, #330867 100%)',
                 color: 'white',
                 padding: '20px',
                 borderRadius: '12px',
@@ -147,7 +130,7 @@ const Cards = ({ selectedCategory }) => {
                 margin: '0 auto',
               }}
             >
-              We will update it very soon.
+              We will update it very soon.......!
             </Box>
             <style>
               {`
@@ -164,10 +147,20 @@ const Cards = ({ selectedCategory }) => {
               `}
             </style>
           </Grid>
+        ) : (
+          filteredLocations.map((location, index) => (
+            <Grid item key={index} xs={12} sm={6} md={4} lg={3}>
+              <ImageCarousel
+                location={location}
+                currentIndex={currentIndices[index] || 0}
+                onPrevious={() => handlePrevious(index)}
+                onNext={() => handleNext(index)}
+              />
+            </Grid>
+          ))
         )}
       </Grid>
     </Box>
   );
 };
-
 export default Cards;
