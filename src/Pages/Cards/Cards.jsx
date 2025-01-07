@@ -7,13 +7,14 @@ import {
   CardMedia,
   Typography,
   Grid,
+  Button,
 } from '@mui/material';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import { useTheme } from '@mui/material/styles';
 import { locations } from '../../data/mockdata';
-// ImageCarousel component remains the same
+
 const ImageCarousel = ({ location, currentIndex, onPrevious, onNext }) => {
   const theme = useTheme();
   return (
@@ -78,89 +79,53 @@ const ImageCarousel = ({ location, currentIndex, onPrevious, onNext }) => {
     </Card>
   );
 };
+
 const Cards = ({ selectedCategory }) => {
-  const [currentIndices, setCurrentIndices] = useState([]);
+  const [currentIndices, setCurrentIndices] = useState(locations.map(() => 0));
+
   // Filter locations based on the selected category
   const filteredLocations =
     selectedCategory === 'All'
       ? locations
       : locations.filter((location) => location.category === selectedCategory);
-  // Adjust current indices dynamically based on filtered locations
-  React.useEffect(() => {
-    setCurrentIndices(Array(filteredLocations.length).fill(0));
-  }, [filteredLocations]);
+
   const handlePrevious = (index) => {
     setCurrentIndices((prevIndices) => {
       const newIndices = [...prevIndices];
       const isFirstSlide = newIndices[index] === 0;
       newIndices[index] = isFirstSlide
-        ? filteredLocations[index].locationImages.length - 1
+        ? locations[index].locationImages.length - 1
         : newIndices[index] - 1;
       return newIndices;
     });
   };
+
   const handleNext = (index) => {
     setCurrentIndices((prevIndices) => {
       const newIndices = [...prevIndices];
-      const isLastSlide =
-        newIndices[index] === filteredLocations[index].locationImages.length - 1;
+      const isLastSlide = newIndices[index] === locations[index].locationImages.length - 1;
       newIndices[index] = isLastSlide ? 0 : newIndices[index] + 1;
       return newIndices;
     });
   };
+
   return (
     <Box sx={{ width: '100%', boxSizing: 'border-box' }}>
       <Grid container spacing={2} sx={{ padding: 2, paddingX: 5 }}>
-        {filteredLocations.length === 0 ? (
-          <Grid item xs={12}>
-            <Box
-              sx={{
-                textAlign: 'center',
-                marginTop: 4,
-                fontStyle: 'italic',
-                fontSize: '32px',
-                fontWeight: 'bold',
-                background: 'linear-gradient(135deg, #30CFD0 0%, #330867 100%)',
-                color: 'white',
-                padding: '20px',
-                borderRadius: '12px',
-                boxShadow: '0 4px 15px rgba(0, 0, 0, 0.2)',
-                animation: 'fadeIn 2s ease-in-out',
-                width: '340px',
-                margin: '0 auto',
-              }}
-            >
-              We will update it very soon.......!
-            </Box>
-            <style>
-              {`
-                @keyframes fadeIn {
-                  0% {
-                    opacity: 0;
-                    transform: translateY(20px);
-                  }
-                  100% {
-                    opacity: 1;
-                    transform: translateY(0);
-                  }
-                }
-              `}
-            </style>
+        {filteredLocations.map((location, index) => (
+          <Grid item key={index} xs={12} sm={6} md={4} lg={3}>
+            <ImageCarousel
+              location={location}
+              currentIndex={currentIndices[index]}
+              onPrevious={() => handlePrevious(index)}
+              onNext={() => handleNext(index)}
+            />
           </Grid>
-        ) : (
-          filteredLocations.map((location, index) => (
-            <Grid item key={index} xs={12} sm={6} md={4} lg={3}>
-              <ImageCarousel
-                location={location}
-                currentIndex={currentIndices[index] || 0}
-                onPrevious={() => handlePrevious(index)}
-                onNext={() => handleNext(index)}
-              />
-            </Grid>
-          ))
-        )}
+        ))}
       </Grid>
     </Box>
   );
 };
+
+
 export default Cards;
