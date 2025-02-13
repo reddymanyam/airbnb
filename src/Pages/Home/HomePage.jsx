@@ -1,7 +1,5 @@
-import { Box, Button, Stack, Typography } from '@mui/material'
+import { Box, Typography } from '@mui/material'
 import React from 'react'
-import { SiAirbnb } from 'react-icons/si'
-import { RxHome } from "react-icons/rx";
 import { useNavigate } from 'react-router-dom';
 import GoogleMaps from '../../GoogleMaps/GoogleMaps';
 import Grid from '@mui/material/Grid2';
@@ -10,11 +8,6 @@ import Navbar from '../Navbar/Navbar';
 
 const HomePage = () => {
  
-  const navigate = useNavigate();
-
-  const handleHome = () => {
-    navigate('/')
-  }
 
   return (
     <Box sx={{ width: "100%", minHeight: "100vh", background: "#fff" }}>
