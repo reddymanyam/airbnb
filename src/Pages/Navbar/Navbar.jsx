@@ -50,7 +50,7 @@ const Navbar = ({ variant = "default" }) => {
         <SiAirbnb size={36} color='#ff385c' onClick={handleHome} cursor="pointer" />
 
         {variant === "homepage" ? (
-          // 🎯 Homepage Variant
+          // Homepage Variant
           <Stack sx={{ flexDirection: "row", gap: "30px", alignItems: "center" }}>
             <Typography color='black' variant='body1' sx={{ fontWeight: 500 }}>
               Ready to Airbnb it?
@@ -64,7 +64,7 @@ const Navbar = ({ variant = "default" }) => {
             </Button>
           </Stack>
         ) : (
-          // 🎯 Default Variant
+          // Default Variant
           <>
             {/* Search Bar */}
             <Paper elevation={1} sx={{
