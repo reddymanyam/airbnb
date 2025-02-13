@@ -1,3 +1,4 @@
+import { Typography } from "@mui/material";
 import React, { lazy, Suspense } from "react";
 
 const Auth = lazy(() => import("../Auth/Auth"));
@@ -9,10 +10,10 @@ const HelpCenter = lazy(() => import("../Pages/Help/HelpCenter"));
 const HomePage = lazy(() => import("../Pages/Home/HomePage"));
 
 const Router = [
-    {
+    { 
         path: "/",
         element: (
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense fallback={<Typography variant="h2" componetnt="h2">Loading...</Typography>}>
                 <MainLayout />
             </Suspense>
         ),
@@ -20,7 +21,7 @@ const Router = [
             {
                 index: true, // Use index for the default route instead of path:'/'
                 element: (
-                    <Suspense fallback={<div>Loading...</div>}>
+                    <Suspense fallback={<Typography variant="h2" componetnt="h2">Loading...</Typography>}>
                         <Dashboard />
                     </Suspense>
                 ),
@@ -30,7 +31,7 @@ const Router = [
     {
         path: "/",
         element: (
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense fallback={<Typography variant="h2" componetnt="h2">Loading...</Typography>}>
                 <Layout />
             </Suspense>
         ),
@@ -38,7 +39,7 @@ const Router = [
             {
                 path: "auth",
                 element: (
-                    <Suspense fallback={<div>Loading...</div>}>
+                    <Suspense fallback={<Typography variant="h2" componetnt="h2">Loading...</Typography>}>
                         <Auth />
                     </Suspense>
                 ),
@@ -46,7 +47,7 @@ const Router = [
             {
                 path: "homepage",
                 element: (
-                    <Suspense fallback={<div>Loading...</div>}>
+                    <Suspense fallback={<Typography variant="h2" componetnt="h2">Loading...</Typography>}>
                         <HomePage />
                     </Suspense>
                 ),
@@ -54,7 +55,7 @@ const Router = [
             {
                 path: "helpcenter",
                 element: (
-                    <Suspense fallback={<div>Loading...</div>}>
+                    <Suspense fallback={<Typography variant="h2" componetnt="h2">Loading...</Typography>}>
                         <HelpCenter />
                     </Suspense>
                 ),
@@ -62,7 +63,7 @@ const Router = [
             {
                 path: "experience",
                 element: (
-                    <Suspense fallback={<div>Loading...</div>}>
+                    <Suspense fallback={<Typography variant="h2" componetnt="h2">Loading...</Typography>}>
                         <Experience />
                     </Suspense>
                 ),
