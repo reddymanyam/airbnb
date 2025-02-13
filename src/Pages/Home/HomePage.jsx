@@ -1,6 +1,5 @@
 import { Box, Typography } from '@mui/material'
 import React from 'react'
-import { useNavigate } from 'react-router-dom';
 import GoogleMaps from '../../GoogleMaps/GoogleMaps';
 import Grid from '@mui/material/Grid2';
 import Footer from '../Footer/Footer';
