@@ -63,6 +63,31 @@ const Navbar = ({ variant = "default" }) => {
               </Typography>
             </Button>
           </Stack>
+        ) : variant === "helpcenter" ? (
+          // HelpCenter Variant - Only shows right side menu
+          <Box sx={{ display: "flex", alignItems: "center", gap: 2, marginLeft: "auto" }}>
+            <Typography variant='body1' color='#000000' sx={{ cursor: "pointer" }}
+              onClick={() => handleNavigation('/homepage')}>
+              Airbnb your home
+            </Typography>
+            <IconButton sx={{ fontSize: '20px', color: 'black' }}>
+              <CiGlobe />
+            </IconButton>
+            <Paper sx={{
+              border: "1px solid #E5E4E2",
+              borderRadius: "50px",
+              padding: "2px"
+            }}>
+              <Stack sx={{ display: "flex", flexDirection: "row" }}>
+                <IconButton onClick={handleClick}>
+                  <IoMenuOutline color='black' />
+                </IconButton>
+                <IconButton onClick={handleClick}>
+                  <AccountCircleTwoToneIcon />
+                </IconButton>
+              </Stack>
+            </Paper>
+          </Box>
         ) : (
           // Default Variant
           <>
@@ -116,18 +141,18 @@ const Navbar = ({ variant = "default" }) => {
                 </Stack>
               </Paper>
             </Box>
-
-            {/* Account Menu */}
-            <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
-              <MenuItem onClick={() => handleNavigation('/auth')}>Sign up</MenuItem>
-              <MenuItem onClick={() => handleNavigation('/auth')}>Login</MenuItem>
-              <Divider />
-              <MenuItem onClick={() => handleNavigation('/homepage')}>Airbnb your home</MenuItem>
-              <MenuItem onClick={() => handleNavigation('/experience')}>Host an experience</MenuItem>
-              <MenuItem onClick={() => handleNavigation('/helpcenter')}>Help Centre</MenuItem>
-            </Menu>
           </>
         )}
+
+        {/* Account Menu */}
+        <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
+          <MenuItem onClick={() => handleNavigation('/auth')}>Sign up</MenuItem>
+          <MenuItem onClick={() => handleNavigation('/auth')}>Login</MenuItem>
+          <Divider />
+          <MenuItem onClick={() => handleNavigation('/homepage')}>Airbnb your home</MenuItem>
+          <MenuItem onClick={() => handleNavigation('/experience')}>Host an experience</MenuItem>
+          <MenuItem onClick={() => handleNavigation('/helpcenter')}>Help Centre</MenuItem>
+        </Menu>
       </Box>
     </Box>
   );
