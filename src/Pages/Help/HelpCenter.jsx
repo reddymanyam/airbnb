@@ -2,7 +2,7 @@ import { Box, IconButton, InputAdornment, TextField, Typography } from '@mui/mat
 import React from 'react'
 import { IoSearch } from 'react-icons/io5'
 import Navbar from '../Navbar/Navbar';
-
+import Footer from '../Footer/Footer';
 const HelpCenter = () => {
 
   return (
@@ -42,6 +42,7 @@ const HelpCenter = () => {
           </Box>
         </Box>
       </Box>
+      <Footer />
     </>
   )
 }
