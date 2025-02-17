@@ -39,37 +39,37 @@ const ViewDetails = () => {
     if (!location) {
         return <Typography variant="h5">No Data Found</Typography>;
     }
-    
+
     const items = [
         {
-            id:1,
-            icon:<KingBedIcon />,
-            title:"Sleep, or don’t, on my tour bus",
-            subtitle:"Join mi parche on our bus for a week and see what tour life is really like."
+            id: 1,
+            icon: <KingBedIcon />,
+            title: "Sleep, or don’t, on my tour bus",
+            subtitle: "Join mi parche on our bus for a week and see what tour life is really like."
         },
         {
-            id:2,
-            icon:<MusicNoteIcon />,
-            title:"Get exclusive tour access",
-            subtitle:"You’ll get VIP tickets to a whole week of the FERXXOCALIPSIS tour."
+            id: 2,
+            icon: <MusicNoteIcon />,
+            title: "Get exclusive tour access",
+            subtitle: "You’ll get VIP tickets to a whole week of the FERXXOCALIPSIS tour."
         },
         {
-            id:3,
-            icon:<CelebrationIcon />,
-            title:"Come backstage with me",
-            subtitle:"Watch me prep for my show before I go on stage. Make sure to wear green."
+            id: 3,
+            icon: <CelebrationIcon />,
+            title: "Come backstage with me",
+            subtitle: "Watch me prep for my show before I go on stage. Make sure to wear green."
         },
         {
-            id:4,
-            icon:<EarbudsBatteryIcon />,
-            title:"Take part in tour traditions",
-            subtitle:"Get in on video game tournaments and ugly thrifting challenges."
+            id: 4,
+            icon: <EarbudsBatteryIcon />,
+            title: "Take part in tour traditions",
+            subtitle: "Get in on video game tournaments and ugly thrifting challenges."
         }
     ]
     return (
         <>
             <Navbar />
-            <Stack spacing={3} width="90%" margin="2px auto" bgcolor="white">
+            <Stack spacing={2} width="90%" margin="2px auto" bgcolor="white">
                 {/* Title and Icons */}
                 <Stack
                     flexDirection={isSmallScreen ? "column" : "row"}
@@ -78,7 +78,7 @@ const ViewDetails = () => {
                     gap={isSmallScreen ? 2 : 0}
                     textAlign={isSmallScreen ? "center" : "left"}
                 >
-                    <Typography variant="h4" fontWeight="600">
+                    <Typography variant="h4" fontWeight="600" marginTop={2}>
                         {location.location}
                     </Typography>
 
@@ -109,10 +109,10 @@ const ViewDetails = () => {
                     {location.locationImages.map((img, index) => (
                         <Grid item xs={12} sm={6} md={6} key={index}
                             sx={{
-                                height: isSmallScreen ? "250px" : isMediumScreen ? "300px" : "350px",
+                                height: isSmallScreen ? "250px" : isMediumScreen ? "300px" : "350px", padding:"0px" 
                             }}
                         >
-                            <Item component="img" src={img.url} sx={{ objectFit: "cover" }} />
+                            <Item component="img" src={img.url} sx={{ objectFit: "cover" , padding:"0px"}} />
                         </Grid>
                     ))}
                 </Grid>
@@ -142,15 +142,23 @@ const ViewDetails = () => {
                         </Typography>
                     </Stack>
                 </Box>
-                <Stack flexDirection="row" spacing={2} gap={2} width="100%" m={0}>
-                    <IconButton>
-                        <KingBedIcon />
-                    </IconButton>
-                    <Box>
-                        <Typography variant="subtitle1" fontWeight="bold">Sleep, or don’t, on my tour bus</Typography>
-                        <Typography variant="body2">Join mi parche on our bus for a week and see what tour life is really like.</Typography>
-                    </Box>
-                </Stack>
+                <Box sx={{
+                    padding: "12px 0px", borderTop: "1px solid #ccc",
+                    borderBottom: "1px solid #ccc"
+                }}>
+                    {items.map((item, id) => (
+                        <Stack flexDirection="row" spacing={2} gap={2} width="100%" m={0} padding="10px">
+                            <IconButton>
+                                {item.icon}
+                            </IconButton>
+                            <Box>
+                                <Typography variant="subtitle1" fontWeight="bold">{item.title}</Typography>
+                                <Typography variant="body2">{item.subtitle}</Typography>
+                            </Box>
+                        </Stack>
+                    ))}
+                </Box>
+
             </Stack>
             <Footer />
         </>
