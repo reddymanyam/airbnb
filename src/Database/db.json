@@ -34,6 +34,13 @@
       "email": "reddy111@gmail.com0",
       "password": "0",
       "confirmPassword": "0"
+    },
+    {
+      "id": "47b3",
+      "name": "Manyam Reddappa Reddy",
+      "email": "reddappareddy18@gmail.com",
+      "password": "Reddy@1854425",
+      "confirmPassword": "Reddy@1854425"
     }
   ]
 }

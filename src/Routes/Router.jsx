@@ -8,6 +8,7 @@ const Dashboard = lazy(() => import("../Pages/Dashboard/Dashboard"));
 const Experience = lazy(() => import("../Pages/Experience/Experience"));
 const HelpCenter = lazy(() => import("../Pages/Help/HelpCenter"));
 const HomePage = lazy(() => import("../Pages/Home/HomePage"));
+const ViewDetails = lazy(() => import("../Pages/ViewDetails/ViewDetails"));
 
 const Router = [
     { 
@@ -65,6 +66,14 @@ const Router = [
                 element: (
                     <Suspense fallback={<Typography variant="h2" componetnt="h2">Loading...</Typography>}>
                         <Experience />
+                    </Suspense>
+                ),
+            },
+            {
+                path: "viewdetails",
+                element: (
+                    <Suspense fallback={<Typography variant="h2" componetnt="h2">Loading...</Typography>}>
+                        <ViewDetails />
                     </Suspense>
                 ),
             },
