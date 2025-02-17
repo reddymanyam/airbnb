@@ -14,9 +14,17 @@ import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import { useTheme } from '@mui/material/styles';
 import { locations } from '../../data/mockdata';
+import { useNavigate } from 'react-router-dom';
 
 const ImageCarousel = ({ location, currentIndex, onPrevious, onNext }) => {
+  
   const theme = useTheme();
+  const navigate = useNavigate();
+
+  const handleView = () =>{
+    navigate('/viewdetails', {state: {location}})
+  }
+
   return (
     <Card elevation={2}>
       <CardActionArea
@@ -34,6 +42,7 @@ const ImageCarousel = ({ location, currentIndex, onPrevious, onNext }) => {
           height="260px"
           image={location.locationImages[currentIndex].url}
           alt={location.location}
+          onClick={()=>handleView()}
         />
         <FavoriteBorderIcon
           sx={{
