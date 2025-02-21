@@ -25,6 +25,7 @@ export const locations = [
     isNew: true,
     rating: 4.5,
     category: 'LakeFront',
+    reviews: 8
   },
   {
     id: 2,
@@ -53,6 +54,7 @@ export const locations = [
     isNew: false,
     rating: 4.99,
     category: 'LakeFront',
+    reviews: 182
 
   },
   {
@@ -81,6 +83,7 @@ export const locations = [
     isNew: true,
     rating: 4.5,
     category: 'Shared Homes',
+    reviews: 121
 
   },
   {
@@ -109,6 +112,7 @@ export const locations = [
     isNew: false,
     rating: 4.2,
     category: 'LakeFront',
+    reviews: 218
 
   },
   {
@@ -137,6 +141,7 @@ export const locations = [
     isNew: true,
     rating: 4.1,
     category: 'LakeFront',
+    reviews: 287
 
   },
   {
@@ -165,6 +170,7 @@ export const locations = [
     isNew: false,
     rating: 4.6,
     category: 'LakeFront',
+    reviews: 673
 
   },
   {
@@ -193,6 +199,7 @@ export const locations = [
     isNew: true,
     rating: 4.7,
     category: 'Shared Homes',
+    reviews: 973
 
   },
   {
@@ -221,6 +228,7 @@ export const locations = [
     isNew: false,
     rating: 4.8,
     category: 'Shared Homes',
+    reviews: 126
 
   },
   {
@@ -249,6 +257,7 @@ export const locations = [
     isNew: true,
     rating: 4.3,
     category: 'Shared Homes',
+    reviews: 187
 
   },
   {
@@ -277,6 +286,7 @@ export const locations = [
     isNew: false,
     rating: 4.6,
     category: 'OMG!',
+    reviews: 144
 
   },
   {
@@ -305,6 +315,7 @@ export const locations = [
     isNew: false,
     rating: 4.1,
     category: 'Shared Homes',
+    reviews: 214
 
   },
   {
@@ -333,6 +344,7 @@ export const locations = [
     isNew: false,
     rating: 4.2,
     category: 'Shared Homes',
+    reviews: 332
 
   },
   {
@@ -361,6 +373,8 @@ export const locations = [
     isNew: true,
     rating: 4.5,
     category: 'Shared Homes',
+    reviews: 316
+
   },
   {
     id: 14,
@@ -388,6 +402,7 @@ export const locations = [
     isNew: true,
     rating: 4.8,
     category: 'Shared Homes',
+    reviews: 742
 
   },
   {
@@ -416,6 +431,7 @@ export const locations = [
     isNew: true,
     rating: 4.88,
     category: 'Shared Homes',
+    reviews: 889
 
   },
   {
@@ -444,6 +460,7 @@ export const locations = [
     isNew: false,
     rating: 4.2,
     category: 'Shared Homes',
+    reviews: 3478
 
   },
   {
@@ -472,6 +489,7 @@ export const locations = [
     isNew: false,
     rating: 4.1,
     category: 'Bed & Breakfast',
+    reviews: 5786
 
 
   },
@@ -502,6 +520,7 @@ export const locations = [
     isNew: true,
     rating: 4.6,
     category: 'National Parks',
+    reviews: 75
 
   },
   {
@@ -530,6 +549,7 @@ export const locations = [
     isNew: true,
     rating: 4.7,
     category: 'Bed & Breakfast',
+    reviews: 67
 
   },
   {
@@ -558,6 +578,7 @@ export const locations = [
     isNew: false,
     rating: 4.5,
     category: 'Shared Homes',
+    reviews: 12
 
   },
   {
@@ -586,6 +607,8 @@ export const locations = [
     isNew: false,
     rating: 4.5,
     category: 'Arctic',
+    reviews: 567
+
   },
   {
     id: 22,
@@ -613,6 +636,8 @@ export const locations = [
     isNew: false,
     rating: 4.5,
     category: 'Arctic',
+    reviews: 125
+
   },{
     id: 23,
     locationImages: [
@@ -639,6 +664,8 @@ export const locations = [
     isNew: false,
     rating: 4.5,
     category: 'Arctic',
+    reviews: 345
+
   },
   {
     id: 24,
@@ -666,5 +693,7 @@ export const locations = [
     isNew: false,
     rating: 4.5,
     category: 'Arctic',
+    reviews: 11
+
   },
 ];
