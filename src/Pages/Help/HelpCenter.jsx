@@ -49,7 +49,7 @@ const HelpCenter = () => {
 
   return (
     <>
-      <Box sx={{ width: "100%", height: "100vh", background: "white" }}>
+      <Box sx={{ width: "100%", height: "100vh", background: "white" , marginBottom:"40px"}}>
         <Navbar variant="helpcenter" />
         <Box sx={{ width: "100%", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", padding: "50px" }}>
           <Typography variant="h3" component="h2">Hi, how can we help?</Typography>
@@ -83,8 +83,8 @@ const HelpCenter = () => {
               }} />
           </Box>
         </Box>
-        <Stack>
-
+       
+        <Stack sx={{margin:"10px auto"}}>
           <Box sx={{ width: '80%', margin:"0 auto" }}>
             <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
               <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
@@ -96,6 +96,7 @@ const HelpCenter = () => {
             </Box>
 
           <Stack sx={{ padding: "20px", border: "1px solid gray", borderRadius: "20px", width: "85%", margin: "40px auto", flexDirection: "row", justifyContent: "space-between", alignItems: "center" }}>
+           
             <Box>
               <Typography variant='h4' component="h2">We’re here for you</Typography>
               <Typography variant='subtitle1' component="h2">Log in to get help with your reservations, account, and more.</Typography>
@@ -103,20 +104,21 @@ const HelpCenter = () => {
             <Button variant='contained' sx={{ backgroundColor: '#dc0e63', padding: "12px 120px", borderRadius: "8px" }}>Login or SignUp</Button>
           </Stack>
             <CustomTabPanel value={value} index={0}>
-              Item One
+             Guest
             </CustomTabPanel>
             <CustomTabPanel value={value} index={1}>
-              Item Two
+              Host
             </CustomTabPanel>
             <CustomTabPanel value={value} index={2}>
-              Item Three
+              Experience Host
+            </CustomTabPanel>
+            <CustomTabPanel value={value} index={3}>
+              Travel admin
             </CustomTabPanel>
           </Box>
-
-
         </Stack>
-      </Box>
       <Footer />
+      </Box>
     </>
   )
 }
