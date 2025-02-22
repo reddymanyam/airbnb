@@ -37,7 +37,28 @@ function a11yProps(index) {
   };
 }
 
-
+const cards = [
+  {
+    id: 1,
+    img: "https://images.contentstack.io/v3/assets/bltec2ed8e3c4b1e16d/bltfbcc7f32e0cd6ff5/getting-started-on-airbnb-optimized.jpg",
+    header: "Getting started with Airbnb"
+  },
+  {
+    id: 2,
+    img: "https://images.contentstack.io/v3/assets/bltec2ed8e3c4b1e16d/blt085a97d5fcab4519/accessing-your-account-optimized.jpg",
+    header: "Retired article 3114: Access and manage your account"
+  },
+  {
+    id: 3,
+    img:"https://images.contentstack.io/v3/assets/bltec2ed8e3c4b1e16d/blt7b9def132e4aa927/help-with-a-reservation-optimized.jpg",
+    header: "Help with a reservation"
+  },
+  {
+    id: 4,
+    img:"https://images.contentstack.io/v3/assets/bltec2ed8e3c4b1e16d/blt5912675266dfa56f/AC_Guests_HG_EN_S@3x.png",
+    header: "AirCover for guests"
+  }
+]
 
 const HelpCenter = () => {
 
@@ -49,7 +70,7 @@ const HelpCenter = () => {
 
   return (
     <>
-      <Box sx={{ width: "100%", height: "100vh", background: "white" , marginBottom:"40px"}}>
+      <Box sx={{ width: "100%", height: "100vh", background: "white", marginBottom: "40px" }}>
         <Navbar variant="helpcenter" />
         <Box sx={{ width: "100%", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", padding: "50px" }}>
           <Typography variant="h3" component="h2">Hi, how can we help?</Typography>
@@ -83,9 +104,9 @@ const HelpCenter = () => {
               }} />
           </Box>
         </Box>
-       
-        <Stack sx={{margin:"10px auto"}}>
-          <Box sx={{ width: '80%', margin:"0 auto" }}>
+
+        <Stack sx={{ margin: "10px auto" }}>
+          <Box sx={{ width: '80%', margin: "0 auto" }}>
             <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
               <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
                 <Tab label="Guest" {...a11yProps(0)} />
@@ -95,16 +116,16 @@ const HelpCenter = () => {
               </Tabs>
             </Box>
 
-          <Stack sx={{ padding: "20px", border: "1px solid gray", borderRadius: "20px", width: "85%", margin: "40px auto", flexDirection: "row", justifyContent: "space-between", alignItems: "center" }}>
-           
-            <Box>
-              <Typography variant='h4' component="h2">We’re here for you</Typography>
-              <Typography variant='subtitle1' component="h2">Log in to get help with your reservations, account, and more.</Typography>
-            </Box>
-            <Button variant='contained' sx={{ backgroundColor: '#dc0e63', padding: "12px 120px", borderRadius: "8px" }}>Login or SignUp</Button>
-          </Stack>
+            <Stack sx={{ padding: "20px", border: "1px solid gray", borderRadius: "20px", width: "85%", margin: "40px auto", flexDirection: "row", justifyContent: "space-between", alignItems: "center" }}>
+
+              <Box>
+                <Typography variant='h4' component="h2">We’re here for you</Typography>
+                <Typography variant='subtitle1' component="h2">Log in to get help with your reservations, account, and more.</Typography>
+              </Box>
+              <Button variant='contained' sx={{ backgroundColor: '#dc0e63', padding: "12px 120px", borderRadius: "8px" }}>Login or SignUp</Button>
+            </Stack>
             <CustomTabPanel value={value} index={0}>
-             Guest
+              Guest
             </CustomTabPanel>
             <CustomTabPanel value={value} index={1}>
               Host
@@ -117,7 +138,7 @@ const HelpCenter = () => {
             </CustomTabPanel>
           </Box>
         </Stack>
-      <Footer />
+        <Footer />
       </Box>
     </>
   )
