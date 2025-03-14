@@ -50,12 +50,12 @@ const cards = [
   },
   {
     id: 3,
-    img:"https://images.contentstack.io/v3/assets/bltec2ed8e3c4b1e16d/blt7b9def132e4aa927/help-with-a-reservation-optimized.jpg",
+    img: "https://images.contentstack.io/v3/assets/bltec2ed8e3c4b1e16d/blt7b9def132e4aa927/help-with-a-reservation-optimized.jpg",
     header: "Help with a reservation"
   },
   {
     id: 4,
-    img:"https://images.contentstack.io/v3/assets/bltec2ed8e3c4b1e16d/blt5912675266dfa56f/AC_Guests_HG_EN_S@3x.png",
+    img: "https://images.contentstack.io/v3/assets/bltec2ed8e3c4b1e16d/blt5912675266dfa56f/AC_Guests_HG_EN_S@3x.png",
     header: "AirCover for guests"
   }
 ]
@@ -124,18 +124,18 @@ const HelpCenter = () => {
               </Box>
               <Button variant='contained' sx={{ backgroundColor: '#dc0e63', padding: "12px 120px", borderRadius: "8px" }}>Login or SignUp</Button>
             </Stack>
-            <CustomTabPanel value={value} index={0}>
-              Guest
-            </CustomTabPanel>
-            <CustomTabPanel value={value} index={1}>
-              Host
-            </CustomTabPanel>
-            <CustomTabPanel value={value} index={2}>
-              Experience Host
-            </CustomTabPanel>
-            <CustomTabPanel value={value} index={3}>
-              Travel admin
-            </CustomTabPanel>
+            {cards.map((item, id) => (
+              <>
+                <Box sx={{width:"280px", height:"280px"}}>
+                  <CustomTabPanel value={value} index={0} key={id}>
+                    <Box sx={{ width: "200px", height: "200px", borderRadius: "20px" }}>
+                      <img src={item.img} />
+                    </Box>
+                    <Typography variant='h5'>{item.header}</Typography>
+                  </CustomTabPanel>
+                </Box>
+              </>
+            ))}
           </Box>
         </Stack>
         <Footer />
