@@ -8,6 +8,8 @@ import Button from '@mui/material/Button';
 import bgimg from '../assets/minimalism-4k-for-mac-desktop-wallpaper-preview.jpg';
 import styled from '@emotion/styled';
 import axios from 'axios';
+import { useNavigate } from "react-router-dom";
+
 
 function CustomTabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -68,6 +70,9 @@ const CustomTextField = styled(TextField)({
 });
 
 export default function Auth() {
+
+    const navigate = useNavigate();
+
     const [formData, setFormData] = React.useState({
         name: "",
         email: "",
@@ -110,6 +115,7 @@ export default function Auth() {
 
             if (user) {
                 alert('Login successful!');
+                navigate("/dashboard");
             } else {
                 alert('Invalid email or password.');
             }
