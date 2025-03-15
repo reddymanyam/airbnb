@@ -11,7 +11,7 @@ const HomePage = lazy(() => import("../Pages/Home/HomePage"));
 const ViewDetails = lazy(() => import("../Pages/ViewDetails/ViewDetails"));
 
 const Router = [
-    { 
+    {
         path: "/",
         element: (
             <Suspense fallback={<Typography variant="h2" componetnt="h2">Loading...</Typography>}>
@@ -20,13 +20,13 @@ const Router = [
         ),
         children: [
             {
-                index: true, // Use index for the default route instead of path:'/'
+                path: "auth",
                 element: (
                     <Suspense fallback={<Typography variant="h2" componetnt="h2">Loading...</Typography>}>
-                        <Dashboard />
+                        <Auth />
                     </Suspense>
                 ),
-            },
+            }
         ],
     },
     {
@@ -38,10 +38,10 @@ const Router = [
         ),
         children: [
             {
-                path: "auth",
+                path: "dashboard",
                 element: (
                     <Suspense fallback={<Typography variant="h2" componetnt="h2">Loading...</Typography>}>
-                        <Auth />
+                        <Dashboard />
                     </Suspense>
                 ),
             },
