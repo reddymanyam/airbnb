@@ -48,6 +48,27 @@
       "email": "reddappareddy18@gmail.com",
       "password": "Reddy@234",
       "confirmPassword": "Reddy@234"
+    },
+    {
+      "id": "bda9",
+      "name": "reddy manyam",
+      "email": "reddy123@gmail.com",
+      "password": "Reddy@123",
+      "confirmPassword": "Reddy@123"
+    },
+    {
+      "id": "9aba",
+      "name": "reddy",
+      "email": "red123@gmail.com",
+      "password": "red123",
+      "confirmPassword": "red123"
+    },
+    {
+      "id": "d6f0",
+      "name": "Manyam Reddappa Reddy",
+      "email": "red1234@gmail.com",
+      "password": "red@123",
+      "confirmPassword": "red@123"
     }
   ]
 }
