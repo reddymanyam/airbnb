@@ -95,7 +95,7 @@ const Experience = () => {
         }}
       >
         <Stack sx={{ width: '80%', alignItems: 'flex-end' }}>
-          <Button variant="contained" sx={{ bgcolor: 'black', padding: '11px 25px', borderRadius: '15px' }} onClick={() => navigate('/')}>
+          <Button variant="contained" sx={{ bgcolor: 'black', padding: '11px 25px', borderRadius: '15px' }} onClick={() => navigate('/dashboard')}>
             Let’s Go
           </Button>
         </Stack>
