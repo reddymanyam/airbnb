@@ -11,11 +11,16 @@ const HelpCenter = lazy(() => import("../Pages/Help/HelpCenter"));
 const HomePage = lazy(() => import("../Pages/Home/HomePage"));
 const ViewDetails = lazy(() => import("../Pages/ViewDetails/ViewDetails"));
 
+// Loading fallback component
+const LoadingFallback = () => (
+    <Typography variant="h2" component="h2">Loading...</Typography>
+);
+
 const Router = [
     {
         path: "/",
         element: (
-            <Suspense fallback={<Typography variant="h2" componetnt="h2">Loading...</Typography>}>
+            <Suspense fallback={<LoadingFallback />}>
                 <MainLayout />
             </Suspense>
         ),
@@ -23,7 +28,7 @@ const Router = [
             {
                 path: "auth",
                 element: (
-                    <Suspense fallback={<Typography variant="h2" componetnt="h2">Loading...</Typography>}>
+                    <Suspense fallback={<LoadingFallback />}>
                         <Auth />
                     </Suspense>
                 ),
@@ -33,48 +38,59 @@ const Router = [
     {
         path: "/",
         element: (
-            <Suspense fallback={<Typography variant="h2" componetnt="h2">Loading...</Typography>}>
-                <ProtectedRoute componet={Layout} />
+            <Suspense fallback={<LoadingFallback />}>
+                <Auth />
             </Suspense>
         ),
         children: [
             {
                 path: "dashboard",
                 element: (
-                    <Suspense fallback={<Typography variant="h2" componetnt="h2">Loading...</Typography>}>
-                        <Dashboard />
+                    <Suspense fallback={<LoadingFallback />}>
+                        <ProtectedRoute>
+                            <Dashboard />
+                        </ProtectedRoute>
                     </Suspense>
                 ),
             },
             {
                 path: "homepage",
                 element: (
-                    <Suspense fallback={<Typography variant="h2" componetnt="h2">Loading...</Typography>}>
-                        <HomePage />
+                    <Suspense fallback={<LoadingFallback />}>
+                        <ProtectedRoute>
+                            <HomePage />
+                        </ProtectedRoute>
                     </Suspense>
                 ),
             },
             {
                 path: "helpcenter",
                 element: (
-                    <Suspense fallback={<Typography variant="h2" componetnt="h2">Loading...</Typography>}>
-                        <HelpCenter />
+                    <Suspense fallback={<LoadingFallback />}>
+                        <ProtectedRoute>
+                            <HelpCenter />
+                        </ProtectedRoute>
                     </Suspense>
                 ),
             },
             {
                 path: "experience",
                 element: (
-                    <Suspense fallback={<Typography variant="h2" componetnt="h2">Loading...</Typography>}>
-                        <Experience />
+                    <Suspense fallback={<LoadingFallback />}>
+                        <ProtectedRoute>
+                            <Experience />
+                        </ProtectedRoute>
                     </Suspense>
                 ),
             },
             {
                 path: "viewdetails",
                 element: (
-                    <Suspense fallback={<Typography variant="h2" componetnt="h2">Loading...</Typography>}>
-                        <ViewDetails />
+                    <Suspense fallback={<LoadingFallback />}>
+                        <ProtectedRoute>
+                            <ViewDetails />
+                        </ProtectedRoute>
+
                     </Suspense>
                 ),
             },
