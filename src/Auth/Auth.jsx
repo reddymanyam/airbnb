@@ -19,9 +19,7 @@ import EmailIcon from '@mui/icons-material/Email';
 import { styled } from '@mui/material/styles';
 import { useTheme, useMediaQuery } from '@mui/material';
 import { useNavigate } from "react-router-dom";
-import axios from 'axios';
 import { keyframes } from "@mui/system";
-
 
 // Custom tab panel component
 function CustomTabPanel(props) {
@@ -116,18 +114,17 @@ const gradientAnimation = keyframes`
   100% { background-position: 0% 50%; }
 `;
 
-
 const AuthContainer = styled(Box)(({ theme }) => ({
-    height: "100vh",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    padding: "0 16px",
-    overflowY: "auto",
-    background: "linear-gradient(-45deg, #ff385c, #ff5a5f, #fc8c8d, #ff385c)",
-    backgroundSize: "300% 300%",
-    animation: `${gradientAnimation} 6s ease infinite`,
-  }));
+  height: "100vh",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  padding: "0 16px",
+  overflowY: "auto",
+  background: "linear-gradient(-45deg, #ff385c, #ff5a5f, #fc8c8d, #ff385c)",
+  backgroundSize: "300% 300%",
+  animation: `${gradientAnimation} 6s ease infinite`,
+}));
 
 export default function Auth() {
   const navigate = useNavigate();
@@ -156,35 +153,63 @@ export default function Auth() {
     event.preventDefault();
   };
 
-  const handleSignUp = async (e) => {
+  const handleSignUp = (e) => {
     e.preventDefault();
+    
     if (formData.password !== formData.confirmPassword) {
       alert('Passwords do not match');
       return;
     }
+    
     try {
-      await axios.post("http://localhost:5000/users", formData);
+      // Get existing users from localStorage or initialize an empty array
+      const existingUsers = JSON.parse(localStorage.getItem('users') || '[]');
+      
+      // Check if email already exists
+      const emailExists = existingUsers.some(user => user.email === formData.email);
+      if (emailExists) {
+        alert('Email already registered. Please use a different email.');
+        return;
+      }
+      
+      // Create new user object (excluding confirmPassword)
+      const newUser = {
+        id: Date.now().toString(),
+        name: formData.name,
+        email: formData.email,
+        password: formData.password
+      };
+      
+      // Add new user to the array
+      existingUsers.push(newUser);
+      
+      // Save updated users array back to localStorage
+      localStorage.setItem('users', JSON.stringify(existingUsers));
+      
       alert('Registration successful!');
       setValue(1); // Switch to login tab
     } catch (err) {
-      console.error('Error:', err.response ? err.response.data : err.message);
-      alert('Please fill in the details correctly.');
+      console.error('Error:', err);
+      alert('An error occurred during registration. Please try again.');
     }
   };
 
-  const handleLogin = async (e) => {
+  const handleLogin = (e) => {
     e.preventDefault();
+    
     try {
-      const response = await axios.get("http://localhost:5000/users", {
-        params: {
-          email: formData.email,
-          password: formData.password
-        }
-      });
-
-      const user = response.data.find((user) => (user.email === formData.email) && (user.password === formData.password));
-
+      // Get users from localStorage
+      const users = JSON.parse(localStorage.getItem('users') || '[]');
+      
+      // Find user with matching email and password
+      const user = users.find(
+        user => user.email === formData.email && user.password === formData.password
+      );
+      
       if (user) {
+        // Store current user in localStorage for auth state
+        localStorage.setItem('currentUser', JSON.stringify(user));
+        
         alert('Login successful!');
         navigate("/dashboard");
       } else {
@@ -217,7 +242,10 @@ export default function Auth() {
 
   const handleEmailLogin = () => {
     // Just focus on the email field for now
-    document.getElementById("email-field").focus();
+    const emailField = value === 0 
+      ? document.getElementById("email-field")
+      : document.getElementById("email-field-login");
+    if (emailField) emailField.focus();
   };
 
   return (
