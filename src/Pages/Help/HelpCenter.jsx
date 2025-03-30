@@ -39,26 +39,51 @@ function a11yProps(index) {
 
 const cards = [
   {
+    id: 0,
+    header: "Guides for getting started",
+    images: [
+      "https://images.contentstack.io/v3/assets/bltec2ed8e3c4b1e16d/bltfbcc7f32e0cd6ff5/getting-started-on-airbnb-optimized.jpg",
+      "https://images.contentstack.io/v3/assets/bltec2ed8e3c4b1e16d/blt085a97d5fcab4519/accessing-your-account-optimized.jpg",
+      "https://images.contentstack.io/v3/assets/bltec2ed8e3c4b1e16d/blt7b9def132e4aa927/help-with-a-reservation-optimized.jpg",
+      "https://images.contentstack.io/v3/assets/bltec2ed8e3c4b1e16d/blt5912675266dfa56f/AC_Guests_HG_EN_S@3x.png",
+    ],
+    footer: "Getting started with Airbnb"
+  },
+  {
     id: 1,
-    img: "https://images.contentstack.io/v3/assets/bltec2ed8e3c4b1e16d/bltfbcc7f32e0cd6ff5/getting-started-on-airbnb-optimized.jpg",
-    header: "Getting started with Airbnb"
+    header: "Guides for hosts",
+    images: [
+      "https://images.contentstack.io/v3/assets/bltec2ed8e3c4b1e16d/blt085a97d5fcab4519/accessing-your-account-optimized.jpg",
+      "https://images.contentstack.io/v3/assets/bltec2ed8e3c4b1e16d/blt5912675266dfa56f/AC_Guests_HG_EN_S@3x.png",
+      "https://images.contentstack.io/v3/assets/bltec2ed8e3c4b1e16d/bltfbcc7f32e0cd6ff5/getting-started-on-airbnb-optimized.jpg",
+      "https://images.contentstack.io/v3/assets/bltec2ed8e3c4b1e16d/blt7b9def132e4aa927/help-with-a-reservation-optimized.jpg",
+    ],
+    footer: "Hosting on Airbnb"
   },
   {
     id: 2,
-    img: "https://images.contentstack.io/v3/assets/bltec2ed8e3c4b1e16d/blt085a97d5fcab4519/accessing-your-account-optimized.jpg",
-    header: "Retired article 3114: Access and manage your account"
+    header: "Guides for Experience Hosts",
+    images: [
+      "https://images.contentstack.io/v3/assets/bltec2ed8e3c4b1e16d/blt7b9def132e4aa927/help-with-a-reservation-optimized.jpg",
+      "https://images.contentstack.io/v3/assets/bltec2ed8e3c4b1e16d/blt085a97d5fcab4519/accessing-your-account-optimized.jpg",
+      "https://images.contentstack.io/v3/assets/bltec2ed8e3c4b1e16d/bltfbcc7f32e0cd6ff5/getting-started-on-airbnb-optimized.jpg",
+      "https://images.contentstack.io/v3/assets/bltec2ed8e3c4b1e16d/blt5912675266dfa56f/AC_Guests_HG_EN_S@3x.png",
+    ],
+    footer: "Experience Hosting"
   },
   {
     id: 3,
-    img: "https://images.contentstack.io/v3/assets/bltec2ed8e3c4b1e16d/blt7b9def132e4aa927/help-with-a-reservation-optimized.jpg",
-    header: "Help with a reservation"
-  },
-  {
-    id: 4,
-    img: "https://images.contentstack.io/v3/assets/bltec2ed8e3c4b1e16d/blt5912675266dfa56f/AC_Guests_HG_EN_S@3x.png",
-    header: "AirCover for guests"
+    header: "Guides for travel admins",
+    images: [
+      "https://images.contentstack.io/v3/assets/bltec2ed8e3c4b1e16d/blt085a97d5fcab4519/accessing-your-account-optimized.jpg",
+      "https://images.contentstack.io/v3/assets/bltec2ed8e3c4b1e16d/blt5912675266dfa56f/AC_Guests_HG_EN_S@3x.png",
+      "https://images.contentstack.io/v3/assets/bltec2ed8e3c4b1e16d/bltfbcc7f32e0cd6ff5/getting-started-on-airbnb-optimized.jpg",
+      "https://images.contentstack.io/v3/assets/bltec2ed8e3c4b1e16d/blt7b9def132e4aa927/help-with-a-reservation-optimized.jpg",
+    ],
+    footer: "Travel Administration"
   }
-]
+];
+
 
 const HelpCenter = () => {
 
@@ -106,7 +131,7 @@ const HelpCenter = () => {
         </Box>
 
         <Stack sx={{ margin: "10px auto" }}>
-          <Box sx={{ width: '80%', margin: "0 auto" }}>
+          <Box sx={{ width: '90%', margin: "0 auto" }}>
             <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
               <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
                 <Tab label="Guest" {...a11yProps(0)} />
@@ -117,7 +142,6 @@ const HelpCenter = () => {
             </Box>
 
             <Stack sx={{ padding: "20px", border: "1px solid gray", borderRadius: "20px", width: "85%", margin: "40px auto", flexDirection: "row", justifyContent: "space-between", alignItems: "center" }}>
-
               <Box>
                 <Typography variant='h4' component="h2">We’re here for you</Typography>
                 <Typography variant='subtitle1' component="h2">Log in to get help with your reservations, account, and more.</Typography>
@@ -125,16 +149,19 @@ const HelpCenter = () => {
               <Button variant='contained' sx={{ backgroundColor: '#dc0e63', padding: "12px 120px", borderRadius: "8px" }}>Login or SignUp</Button>
             </Stack>
             {cards.map((item, id) => (
-              <>
-                <Box sx={{width:"280px", height:"280px"}}>
-                  <CustomTabPanel value={value} index={0} key={id}>
-                    <Box sx={{ width: "200px", height: "200px", borderRadius: "20px" }}>
-                      <img src={item.img} />
-                    </Box>
-                    <Typography variant='h5'>{item.header}</Typography>
-                  </CustomTabPanel>
+              <CustomTabPanel value={value} index={id} key={id}>
+                <Typography variant='h5' gutterBottom sx={{ fontWeight: 600 }}>
+                  {item.header}
+                </Typography>
+                <Box sx={{ display: "flex", gap: "20px", overflowX: "auto", padding: "10px" }}>
+                  {item.images.map((imgSrc, imgIndex) => (
+                    <img key={imgIndex} src={imgSrc} style={{ width: "250px", height: "250px", borderRadius: "20px" }} />
+                  ))}
                 </Box>
-              </>
+                <Typography variant='h6' sx={{ fontWeight: 700 }}>
+                  {item.footer}
+                </Typography>
+              </CustomTabPanel>
             ))}
           </Box>
         </Stack>
