@@ -1,4 +1,4 @@
-import { Box, Button, IconButton, InputAdornment, Stack, TextField, Typography } from '@mui/material'
+import { Box, Button, Card, CardActionArea, CardContent, CardMedia, IconButton, InputAdornment, Stack, TextField, Typography } from '@mui/material'
 import React from 'react'
 import { IoSearch } from 'react-icons/io5'
 import Navbar from '../Navbar/Navbar';
@@ -164,6 +164,46 @@ const HelpCenter = () => {
               </CustomTabPanel>
             ))}
           </Box>
+        </Stack>
+
+        <Stack sx={{ bgcolor: "black", height: "420px", padding: "60px 100px", color: 'white', gap: 2 }}>
+          <Typography variant="h4" sx={{ fontWeight: 600 }}>Explore more</Typography>
+          <Stack flexDirection="row" gap={4}>
+            <Card sx={{ width: 400, borderRadius:"10px"}}>
+              <CardActionArea>
+                <CardMedia
+                  component="img"
+                  height="220"
+                  image="https://images.contentstack.io/v3/assets/bltec2ed8e3c4b1e16d/bltfd0c4aa52a78e466/618406a16676ac790d1b8f8f/policy-feature-page-banner-optimized.png"
+                  alt="green iguana"
+                />
+                <CardContent sx={{ padding: "8px", background:"#222222", color:"white" }}>
+                  <Typography variant='subtitle1' sx={{ fontWeight: 600 }}>Our community policies </Typography>
+                  <Typography variant='subtitle2'>How we build a foundation of trust.</Typography>
+                </CardContent>
+              </CardActionArea>
+            </Card>
+            <Card sx={{ width: 400, borderRadius:"10px" }}>
+              <CardActionArea>
+                <CardMedia
+                  component="img"
+                  height="220"
+                  image="https://images.contentstack.io/v3/assets/bltec2ed8e3c4b1e16d/blt93efaa7b7d28041c/Airbnb-Safety-Web.png"
+                  alt="green iguana"
+                />
+                <CardContent sx={{ padding: "8px",background:"#222222", color:"white" }}>
+                  <Typography variant='subtitle1' sx={{ fontWeight: 600 }}>Safety tips and guidelines</Typography>
+                  <Typography variant='subtitle2'>Resources to help travellers stay safe.</Typography>
+                </CardContent>
+              </CardActionArea>
+            </Card>
+            <Stack gap={2} sx={{ width: "350px" }} >
+              <Typography variant='h5'>Need to get in touch?</Typography>
+              <Typography variant='body1'>We’ll start with some questions and get you to the right place.</Typography>
+              <Button variant='contained' sx={{ background: "white", color: "black", fontWeight: "bold", fontSize: "16px", width: "90%", alignSelf: "center", }}>Contact us</Button>
+              <Typography variant='subtitle1'>You can also, <a href="#" style={{ textDecoration: "underline", color: "white" }}>give us feedback.</a></Typography>
+            </Stack>
+          </Stack>
         </Stack>
         <Footer />
       </Box>
