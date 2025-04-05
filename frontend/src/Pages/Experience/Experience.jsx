@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Box, Stack, Typography, Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import PauseCircleOutlineIcon from '@mui/icons-material/PauseCircleOutline';
@@ -10,6 +10,10 @@ const Experience = () => {
   const navigate = useNavigate();
   const videoRef = useRef(null); // Create a reference to the video element
   const [isPlaying, setIsPlaying] = useState(true); // Track video playing state
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const handlePausePlay = () => {
     if (isPlaying) {
@@ -112,7 +116,7 @@ const Experience = () => {
           padding: '20px 0',
         }}
       >
-        <Stack sx={{ width: '80%', paddingTop:"500px" }}>
+        <Stack sx={{ width: '80%', paddingTop: "500px" }}>
           <Typography variant="h3" sx={{ color: 'white', fontWeight: 700 }}>
             What's an experience?
           </Typography>
@@ -139,50 +143,50 @@ const Experience = () => {
           </Button>
         </Stack>
         <Stack
-      direction="row"
-      justifyContent="space-between"
-      alignItems="center"
-      sx={{
-        width: "100%",
-        bgcolor: "white",
-        padding: "90px 200px",
-        gap: "100px",
-      }}
-    >
-      {/* Left Title */}
-      <Typography
-        variant="h4"
-        sx={{
-          color: "gray",
-          fontWeight: 600,
-        }}
-      >
-        Show what you know
-      </Typography>
+          direction="row"
+          justifyContent="space-between"
+          alignItems="center"
+          sx={{
+            width: "100%",
+            bgcolor: "white",
+            padding: "90px 200px",
+            gap: "100px",
+          }}
+        >
+          {/* Left Title */}
+          <Typography
+            variant="h4"
+            sx={{
+              color: "gray",
+              fontWeight: 600,
+            }}
+          >
+            Show what you know
+          </Typography>
 
-      {/* Right Description */}
-      <Typography
-        variant="body1"
-        sx={{
-          color: "black",
-          maxWidth: "500px", 
-          lineHeight: 1.6, 
-        }}
-      >
-        There are experiences of every kind, like cooking, crafting, kayaking,
-        and more. There’s no limit to what you can do. Explore these featured
-        categories.
-      </Typography>
-    </Stack>
-    <AccordionCard />
-    <Box width="100%" bgcolor="white">
-    <Footer />
-    </Box>
-   
+          {/* Right Description */}
+          <Typography
+            variant="body1"
+            sx={{
+              color: "black",
+              maxWidth: "500px",
+              lineHeight: 1.6,
+            }}
+          >
+            There are experiences of every kind, like cooking, crafting, kayaking,
+            and more. There’s no limit to what you can do. Explore these featured
+            categories.
+          </Typography>
+        </Stack>
+        <AccordionCard />
+        <Box width="100%" bgcolor="white">
+          <Footer />
+        </Box>
+
       </Stack>
-     
-      
-      
+
+
+
       {/* CSS for Animation */}
       <style>
         {`
@@ -199,7 +203,7 @@ const Experience = () => {
           }
         `}
       </style>
-      
+
     </Box>
   );
 };

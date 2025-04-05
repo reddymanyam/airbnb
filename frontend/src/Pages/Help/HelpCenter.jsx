@@ -1,5 +1,5 @@
 import { Box, Button, Card, CardActionArea, CardContent, CardMedia, IconButton, InputAdornment, Stack, TextField, Typography } from '@mui/material'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { IoSearch } from 'react-icons/io5'
 import Navbar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
@@ -93,6 +93,10 @@ const HelpCenter = () => {
     setValue(newValue);
   };
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
       <Box sx={{ width: "100%", height: "100vh", background: "white", marginBottom: "40px" }}>
@@ -169,7 +173,7 @@ const HelpCenter = () => {
         <Stack sx={{ bgcolor: "black", height: "420px", padding: "60px 100px", color: 'white', gap: 2 }}>
           <Typography variant="h4" sx={{ fontWeight: 600 }}>Explore more</Typography>
           <Stack flexDirection="row" gap={4}>
-            <Card sx={{ width: 400, borderRadius:"10px"}}>
+            <Card sx={{ width: 400, borderRadius: "10px" }}>
               <CardActionArea>
                 <CardMedia
                   component="img"
@@ -177,13 +181,13 @@ const HelpCenter = () => {
                   image="https://images.contentstack.io/v3/assets/bltec2ed8e3c4b1e16d/bltfd0c4aa52a78e466/618406a16676ac790d1b8f8f/policy-feature-page-banner-optimized.png"
                   alt="green iguana"
                 />
-                <CardContent sx={{ padding: "8px", background:"#222222", color:"white" }}>
+                <CardContent sx={{ padding: "8px", background: "#222222", color: "white" }}>
                   <Typography variant='subtitle1' sx={{ fontWeight: 600 }}>Our community policies </Typography>
                   <Typography variant='subtitle2'>How we build a foundation of trust.</Typography>
                 </CardContent>
               </CardActionArea>
             </Card>
-            <Card sx={{ width: 400, borderRadius:"10px" }}>
+            <Card sx={{ width: 400, borderRadius: "10px" }}>
               <CardActionArea>
                 <CardMedia
                   component="img"
@@ -191,7 +195,7 @@ const HelpCenter = () => {
                   image="https://images.contentstack.io/v3/assets/bltec2ed8e3c4b1e16d/blt93efaa7b7d28041c/Airbnb-Safety-Web.png"
                   alt="green iguana"
                 />
-                <CardContent sx={{ padding: "8px",background:"#222222", color:"white" }}>
+                <CardContent sx={{ padding: "8px", background: "#222222", color: "white" }}>
                   <Typography variant='subtitle1' sx={{ fontWeight: 600 }}>Safety tips and guidelines</Typography>
                   <Typography variant='subtitle2'>Resources to help travellers stay safe.</Typography>
                 </CardContent>
