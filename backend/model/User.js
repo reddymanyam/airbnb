@@ -4,17 +4,26 @@ const validator = require('validator');
 const userSchema = new mongoose.Schema({
     firstName: {
         type: String,
+        lowercase: true,
+        minLength: 5,
+        maxLength: 30,
+        required: true
     },
     lastName: {
         type: String,
+        lowercase: true,
+        minLength: 5,
+        maxLength: 30,
+        required: true
     },
-    email:{
+    email: {
         type: String,
     },
-    password:{
+    password: {
         type: String,
+        minLength: 15,
     },
-    confirmPassword:{
+    confirmPassword: {
         type: String,
     }
 });
