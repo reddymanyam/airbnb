@@ -18,10 +18,20 @@ const userSchema = new mongoose.Schema({
     },
     email: {
         type: String,
+        validate(value) {
+            if (!validator.isEmail(value)) {
+                throw new Error("enter the correct email");
+            }
+        }
     },
     password: {
         type: String,
         minLength: 15,
+        validate(value){
+            if (!validator.isStrongPassword(value)){
+                throw new Error("enter the correct password");
+            }
+        }
     },
     confirmPassword: {
         type: String,
