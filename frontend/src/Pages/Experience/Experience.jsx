@@ -7,13 +7,14 @@ import Footer from '../Footer/Footer';
 import AccordionCard from '../Accordian/AccordionCard';
 
 const Experience = () => {
-  const navigate = useNavigate();
-  const videoRef = useRef(null); // Create a reference to the video element
-  const [isPlaying, setIsPlaying] = useState(true); // Track video playing state
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const navigate = useNavigate();
+  const videoRef = useRef(null); // Create a reference to the video element
+  const [isPlaying, setIsPlaying] = useState(true); // Track video playing state
 
   const handlePausePlay = () => {
     if (isPlaying) {
