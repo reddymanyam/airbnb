@@ -35,12 +35,13 @@ const Item = styled(Paper)({
 });
 
 const ViewDetails = () => {
-    const locationData = useLocation();
-    const location = locationData.state?.location;
 
     useEffect(() => {
-        window.scrollTo(0, 0);
+        window.scroll(0, 0);
     }, []);
+
+    const locationData = useLocation();
+    const location = locationData.state?.location;
 
     // Responsive breakpoints
     const isSmallScreen = useMediaQuery("(max-width: 600px)");
