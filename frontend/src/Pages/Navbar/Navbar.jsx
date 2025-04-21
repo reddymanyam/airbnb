@@ -17,21 +17,33 @@ import { IoMenuOutline, IoSearch } from "react-icons/io5";
 import AccountCircleTwoToneIcon from '@mui/icons-material/AccountCircleTwoTone';
 import { useNavigate } from 'react-router-dom';
 import { RxHome } from "react-icons/rx";
+import dayjs from 'dayjs';
+import { DemoContainer, DemoItem } from '@mui/x-date-pickers/internals/demo';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import { MobileDatePicker } from '@mui/x-date-pickers/MobileDatePicker';
+import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
+import { StaticDatePicker } from '@mui/x-date-pickers/StaticDatePicker';
+
 
 const Navbar = ({ variant = "default" }) => {
   const navigate = useNavigate();
   const [anchorEl, setAnchorEl] = useState(null);
+  const [showDatePicker, setShowDatePicker] = useState(false);
   const open = Boolean(anchorEl);
 
   const isMobile = useMediaQuery('(max-width: 768px)');
   const isDesktop = useMediaQuery('(min-width: 769px)');
 
+  const handleDatePicker = () => setShowDatePicker(prev => !prev);
   const handleClick = (event) => setAnchorEl(event.currentTarget);
   const handleClose = () => setAnchorEl(null);
   const handleNavigation = (path) => { navigate(path); handleClose(); };
   const handleHome = () => navigate('/dashboard');
 
   return (
+
     <Box sx={{
       width: "100%",
       height: "80px",
@@ -66,7 +78,32 @@ const Navbar = ({ variant = "default" }) => {
           }}>
             <Typography variant='body1' color='black'>Anywhere</Typography>
             <Divider orientation="vertical" variant="middle" flexItem />
-            <Typography variant='body1' color='black'>Any week</Typography>
+            {showDatePicker && (
+              <Box sx={{
+                position: 'absolute', top: '100px', width: "300px", zIndex: 1200, background: "#ffffff", borderRadius: "15px", boxShadow: "0 8px 24px rgba(0, 0, 0, 0.15)", border: "1px solid #e0e0e0", padding: "16px", transition: 'all 0.3s ease-in-out',
+                transform: showDatePicker ? 'scale(1)' : 'scale(0.95)',
+              }}>
+                <LocalizationProvider dateAdapter={AdapterDayjs}>
+                  <DemoContainer
+                    components={[
+                      'DatePicker',
+                      'MobileDatePicker',
+                      'DesktopDatePicker',
+                      'StaticDatePicker',
+                    ]}
+                  >
+                    <DemoItem label={
+                      <Typography fontWeight="bold" fontSize="14px">
+                        Select your date for destiny date😉
+                      </Typography>
+                    }>
+                      <DatePicker defaultValue={dayjs('2022-04-17')} />
+                    </DemoItem>
+                  </DemoContainer>
+                </LocalizationProvider>
+              </Box>
+            )}
+            <Typography variant='body1' color='black' onClick={handleDatePicker}>Any week</Typography>
             <Divider orientation="vertical" variant="middle" flexItem />
             <Typography variant='body1' color='gray'>Add guests</Typography>
             <IconButton sx={{

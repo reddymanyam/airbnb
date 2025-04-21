@@ -63,7 +63,7 @@ const Options = () => {
         sx={{
           position: 'sticky',
           top: '80px',
-          zIndex: 1000,
+          zIndex: 999,
           backgroundColor: 'white',
         }}
       >
