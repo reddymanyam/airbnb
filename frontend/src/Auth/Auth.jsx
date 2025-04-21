@@ -224,19 +224,19 @@ export default function Auth() {
   // Social login handlers
   const handleGoogleLogin = () => {
     // Integrate Google OAuth here
-    console.log("Google login clicked");
+    alert("OAuth is under process");
     // Example: window.location.href = 'http://localhost:5000/auth/google';
   };
 
   const handleFacebookLogin = () => {
     // Integrate Facebook OAuth here
-    console.log("Facebook login clicked");
+    alert("OAuth is under process");
     // Example: window.location.href = 'http://localhost:5000/auth/facebook';
   };
 
   const handleAppleLogin = () => {
     // Integrate Apple OAuth here
-    console.log("Apple login clicked");
+    alert("OAuth is under process");
     // Example: window.location.href = 'http://localhost:5000/auth/apple';
   };
 
@@ -256,6 +256,7 @@ export default function Auth() {
           maxWidth: 520,
           maxHeight: '70vh',
           overflowY: 'auto',
+          scrollbarWidth: 'none',
           backgroundColor: 'white',
           borderRadius: isMobile ? '8px' : '12px',
           boxShadow: '0px 6px 20px rgba(0, 0, 0, 0.1)',
