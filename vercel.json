@@ -1,7 +1,0 @@
-
-{
-    "build": {
-      "ignoreCommand": "echo 'skip cache'"
-    }
-  }
-  
