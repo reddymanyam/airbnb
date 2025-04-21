@@ -6,8 +6,7 @@ import Footer from '../Footer/Footer';
 import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
-
-
+import { useNavigate } from 'react-router-dom';
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -87,15 +86,21 @@ const cards = [
 
 const HelpCenter = () => {
 
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+  
+  const handleNavigate = () =>{
+    navigate('/auth')
+  }
 
   return (
     <>
@@ -150,7 +155,7 @@ const HelpCenter = () => {
                 <Typography variant='h4' component="h2">We’re here for you</Typography>
                 <Typography variant='subtitle1' component="h2">Log in to get help with your reservations, account, and more.</Typography>
               </Box>
-              <Button variant='contained' sx={{ backgroundColor: '#dc0e63', padding: "12px 120px", borderRadius: "8px" }}>Login or SignUp</Button>
+              <Button variant='contained' onClick={handleNavigate} sx={{ backgroundColor: '#dc0e63', padding: "12px 120px", borderRadius: "8px" }}>Login or SignUp</Button>
             </Stack>
             {cards.map((item, id) => (
               <CustomTabPanel value={value} index={id} key={id}>

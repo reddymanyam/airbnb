@@ -72,10 +72,10 @@ export const locations = [
         id: 3,
         url: 'https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&w=400&h=250&q=80',
       },
-      // {
-      //   id: 4,
-      //   url: 'https://images.unsplash.com/photo-1562095241-8c6714fd4178?auto=format&fit=crop&w=400&h=250&q=60',
-      // },
+      {
+        id: 4,
+        url: 'https://images.unsplash.com/photo-1562095241-8c6714fd4178?auto=format&fit=crop&w=400&h=250&q=60',
+      },
     ],
     location: 'Carlux, France',
     days: 'Oct 28-Nov 4',
