@@ -22,7 +22,18 @@ const HomePage = () => {
         </Stack>
       </Stack> */}
       <Box sx={{ display: "flex", justifyContent: "center", margin: "10px 0" }}>
-        <GoogleMaps />
+        {/* <GoogleMaps /> */}
+        <Box sx={{ display: "flex", justifyContent: "center", margin: "10px 0" }}>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d497698.7749179518!2d77.30126246150184!3d12.954459536902307!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1670c9b44e6d%3A0xf8dfc3e8517e4fe0!2sBengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1745218948928!5m2!1sen!2sin"
+            width="1200"
+            height="650"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </Box>
       </Box>
       <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", margin: "15px auto" }}>
         <Typography variant='h4' component="h2" sx={{ fontWeight: "600", color: "light black" }}>Airbnb it easily with Airbnb Setup</Typography>
