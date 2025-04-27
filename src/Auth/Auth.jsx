@@ -18,6 +18,7 @@ import AppleIcon from '@mui/icons-material/Apple';
 import EmailIcon from '@mui/icons-material/Email';
 import { styled } from '@mui/material/styles';
 import { useTheme, useMediaQuery } from '@mui/material';
+import { setItem, getItem, removeItem, clearStorage } from 'react-smart-storage';
 import { useNavigate } from "react-router-dom";
 import { keyframes } from "@mui/system";
 
@@ -155,23 +156,23 @@ export default function Auth() {
 
   const handleSignUp = (e) => {
     e.preventDefault();
-    
+
     if (formData.password !== formData.confirmPassword) {
       alert('Passwords do not match');
       return;
     }
-    
+
     try {
       // Get existing users from localStorage or initialize an empty array
       const existingUsers = JSON.parse(localStorage.getItem('users') || '[]');
-      
+
       // Check if email already exists
       const emailExists = existingUsers.some(user => user.email === formData.email);
       if (emailExists) {
         alert('Email already registered. Please use a different email.');
         return;
       }
-      
+
       // Create new user object (excluding confirmPassword)
       const newUser = {
         id: Date.now().toString(),
@@ -179,13 +180,21 @@ export default function Auth() {
         email: formData.email,
         password: formData.password
       };
-      
+
+      const secretKey = 'my-super-secret-key';
+
+      setItem('secureUser', { name: 'Deviprasad', role: 'admin' }, {
+        type: 'local',
+        encrypt: true,
+        hashKey: secretKey
+      });
+
       // Add new user to the array
       existingUsers.push(newUser);
-      
+
       // Save updated users array back to localStorage
       localStorage.setItem('users', JSON.stringify(existingUsers));
-      
+
       alert('Registration successful!');
       setValue(1); // Switch to login tab
     } catch (err) {
@@ -196,20 +205,20 @@ export default function Auth() {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    
+
     try {
       // Get users from localStorage
       const users = JSON.parse(localStorage.getItem('users') || '[]');
-      
+
       // Find user with matching email and password
       const user = users.find(
         user => user.email === formData.email && user.password === formData.password
       );
-      
+
       if (user) {
         // Store current user in localStorage for auth state
         localStorage.setItem('currentUser', JSON.stringify(user));
-        
+
         alert('Login successful!');
         navigate("/dashboard");
       } else {
@@ -242,7 +251,7 @@ export default function Auth() {
 
   const handleEmailLogin = () => {
     // Just focus on the email field for now
-    const emailField = value === 0 
+    const emailField = value === 0
       ? document.getElementById("email-field")
       : document.getElementById("email-field-login");
     if (emailField) emailField.focus();
@@ -263,23 +272,23 @@ export default function Auth() {
           padding: isMobile ? '16px' : '24px',
         }}
       >
-        <Typography 
-          variant="h5" 
-          component="h1" 
-          align="center" 
-          sx={{ 
-            fontWeight: 600, 
+        <Typography
+          variant="h5"
+          component="h1"
+          align="center"
+          sx={{
+            fontWeight: 600,
             color: '#222222',
-            marginBottom: '16px' 
+            marginBottom: '16px'
           }}
         >
           {value === 0 ? 'Sign up for Airbnb' : 'Log in to Airbnb'}
         </Typography>
 
         <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-          <Tabs 
-            value={value} 
-            onChange={handleChange} 
+          <Tabs
+            value={value}
+            onChange={handleChange}
             variant="fullWidth"
             TabIndicatorProps={{
               style: {
@@ -296,29 +305,29 @@ export default function Auth() {
           <CustomTabPanel value={value} index={0}>
             {/* Social buttons for signup */}
             <Box sx={{ mb: 2 }}>
-              <SocialButton 
-                fullWidth 
+              <SocialButton
+                fullWidth
                 startIcon={<GoogleIcon />}
                 onClick={handleGoogleLogin}
               >
                 Continue with Google
               </SocialButton>
-              <SocialButton 
-                fullWidth 
+              <SocialButton
+                fullWidth
                 startIcon={<FacebookIcon />}
                 onClick={handleFacebookLogin}
               >
                 Continue with Facebook
               </SocialButton>
-              <SocialButton 
-                fullWidth 
+              <SocialButton
+                fullWidth
                 startIcon={<AppleIcon />}
                 onClick={handleAppleLogin}
               >
                 Continue with Apple
               </SocialButton>
-              <SocialButton 
-                fullWidth 
+              <SocialButton
+                fullWidth
                 startIcon={<EmailIcon />}
                 onClick={handleEmailLogin}
               >
@@ -398,29 +407,29 @@ export default function Auth() {
           <CustomTabPanel value={value} index={1}>
             {/* Social buttons for login */}
             <Box sx={{ mb: 2 }}>
-              <SocialButton 
-                fullWidth 
+              <SocialButton
+                fullWidth
                 startIcon={<GoogleIcon />}
                 onClick={handleGoogleLogin}
               >
                 Continue with Google
               </SocialButton>
-              <SocialButton 
-                fullWidth 
+              <SocialButton
+                fullWidth
                 startIcon={<FacebookIcon />}
                 onClick={handleFacebookLogin}
               >
                 Continue with Facebook
               </SocialButton>
-              <SocialButton 
-                fullWidth 
+              <SocialButton
+                fullWidth
                 startIcon={<AppleIcon />}
                 onClick={handleAppleLogin}
               >
                 Continue with Apple
               </SocialButton>
-              <SocialButton 
-                fullWidth 
+              <SocialButton
+                fullWidth
                 startIcon={<EmailIcon />}
                 onClick={handleEmailLogin}
               >
