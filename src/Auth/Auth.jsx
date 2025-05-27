@@ -21,6 +21,8 @@ import { useTheme, useMediaQuery } from '@mui/material';
 import { setItem, getItem, removeItem, clearStorage } from 'react-smart-storage';
 import { useNavigate } from "react-router-dom";
 import { keyframes } from "@mui/system";
+import { toast } from 'react-toastify';
+
 
 // Custom tab panel component
 function CustomTabPanel(props) {
@@ -158,7 +160,7 @@ export default function Auth() {
     e.preventDefault();
 
     if (formData.password !== formData.confirmPassword) {
-      alert('Passwords do not match');
+      toast.error('Passwords do not match');
       return;
     }
 
@@ -169,7 +171,7 @@ export default function Auth() {
       // Check if email already exists
       const emailExists = existingUsers.some(user => user.email === formData.email);
       if (emailExists) {
-        alert('Email already registered. Please use a different email.');
+        toast.warning('Email already registered. Please use a different email.');
         return;
       }
 
@@ -195,11 +197,11 @@ export default function Auth() {
       // Save updated users array back to localStorage
       localStorage.setItem('users', JSON.stringify(existingUsers));
 
-      alert('Registration successful!');
+      toast.success('Registration successful!');
       setValue(1); // Switch to login tab
     } catch (err) {
       console.error('Error:', err);
-      alert('An error occurred during registration. Please try again.');
+      toast.error('An error occurred during registration. Please try again.');
     }
   };
 
@@ -219,33 +221,33 @@ export default function Auth() {
         // Store current user in localStorage for auth state
         localStorage.setItem('currentUser', JSON.stringify(user));
 
-        alert('Login successful!');
+        toast.success('Login successful!');
         navigate("/dashboard");
       } else {
-        alert('Invalid email or password.');
+        toast.error('Invalid email or password.');
       }
     } catch (err) {
       console.error(err);
-      alert('An error occurred during login. Please try again.');
+      toast.error('An error occurred during login. Please try again.');
     }
   };
 
   // Social login handlers
   const handleGoogleLogin = () => {
     // Integrate Google OAuth here
-    alert("OAuth is under process");
+    toast("OAuth is under process");
     // Example: window.location.href = 'http://localhost:5000/auth/google';
   };
 
   const handleFacebookLogin = () => {
     // Integrate Facebook OAuth here
-    alert("OAuth is under process");
+    toast("OAuth is under process");
     // Example: window.location.href = 'http://localhost:5000/auth/facebook';
   };
 
   const handleAppleLogin = () => {
     // Integrate Apple OAuth here
-    alert("OAuth is under process");
+    toast("OAuth is under process");
     // Example: window.location.href = 'http://localhost:5000/auth/apple';
   };
 

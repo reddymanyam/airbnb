@@ -2,6 +2,7 @@ import { useRoutes } from "react-router-dom";
 import Router from './Routes/Router';
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { CssBaseline } from "@mui/material";
+import { ToastContainer, toast } from 'react-toastify';
 
 const App = () => {
   // Define a theme (you can customize this as needed)
@@ -12,10 +13,11 @@ const App = () => {
 
   // Return the structure
   return (
-    
+
     <ThemeProvider theme={theme}>
       <CssBaseline />
       {routing}
+      <ToastContainer />
     </ThemeProvider>
   );
 };
