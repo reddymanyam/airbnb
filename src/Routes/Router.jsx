@@ -1,7 +1,14 @@
 import { Typography } from "@mui/material";
 import React, { lazy, Suspense } from "react";
-import ProtectedRoute from "./ProtectedRoute";
 
+// Utility HOC to wrap components in Suspense
+const withSuspense = (Component) => (
+  <Suspense fallback={<Typography variant="h2" component="h2">Loading...</Typography>}>
+    <Component />
+  </Suspense>
+);
+
+// Lazy-loaded components
 const Auth = lazy(() => import("../Auth/Auth"));
 const Layout = lazy(() => import("../components/Layout/Layout"));
 const MainLayout = lazy(() => import("../components/MainLayout/MainLayout"));
@@ -12,75 +19,42 @@ const HomePage = lazy(() => import("../Pages/Home/HomePage"));
 const ViewDetails = lazy(() => import("../Pages/ViewDetails/ViewDetails"));
 
 const Router = [
-    {
-        path: "/",
-        element: (
-            <Suspense fallback={<Typography variant="h2" componetnt="h2">Loading...</Typography>}>
-                <MainLayout />
-            </Suspense>
-        ),
-        children: [
-            {
-                path: "auth",
-                element: (
-                    <Suspense fallback={<Typography variant="h2" componetnt="h2">Loading...</Typography>}>
-                        <Auth />
-                    </Suspense>
-                ),
-            }
-        ],
-    },
-    {
-        path: "/",
-        element: (
-            <Suspense fallback={<Typography variant="h2" componetnt="h2">Loading...</Typography>}>
-                <Layout />
-            </Suspense>
-        ),
-        children: [
-            {
-                path: "dashboard",
-                element: (
-                    <Suspense fallback={<Typography variant="h2" componetnt="h2">Loading...</Typography>}>
-                        <Dashboard />
-                    </Suspense>
-                ),
-            },
-            {
-                path: "homepage",
-                element: (
-                    <Suspense fallback={<Typography variant="h2" componetnt="h2">Loading...</Typography>}>
-                        <HomePage />
-                    </Suspense>
-                ),
-            },
-            {
-                path: "helpcenter",
-                element: (
-                    <Suspense fallback={<Typography variant="h2" componetnt="h2">Loading...</Typography>}>
-                        <HelpCenter />
-                    </Suspense>
-                ),
-            },
-            {
-                
-                path: "experience",
-                element: (
-                    <Suspense fallback={<Typography variant="h2" componetnt="h2">Loading...</Typography>}>
-                        <Experience />
-                    </Suspense>
-                ),
-            },
-            {
-                path: "viewdetails",
-                element: (
-                    <Suspense fallback={<Typography variant="h2" componetnt="h2">Loading...</Typography>}>
-                        <ViewDetails />
-                    </Suspense>
-                ),
-            },
-        ],
-    },
+  {
+    path: "/",
+    element: withSuspense(MainLayout),
+    children: [
+      {
+        path: "auth",
+        element: withSuspense(Auth),
+      },
+    ],
+  },
+  {
+    path: "/",
+    element: withSuspense(Layout),
+    children: [
+      {
+        path: "dashboard",
+        element: withSuspense(Dashboard),
+      },
+      {
+        path: "homepage",
+        element: withSuspense(HomePage),
+      },
+      {
+        path: "helpcenter",
+        element: withSuspense(HelpCenter),
+      },
+      {
+        path: "experience",
+        element: withSuspense(Experience),
+      },
+      {
+        path: "viewdetails",
+        element: withSuspense(ViewDetails),
+      },
+    ],
+  },
 ];
 
 export default Router;
