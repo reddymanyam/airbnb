@@ -1,9 +1,10 @@
 import { Typography } from "@mui/material";
 import React, { lazy, Suspense } from "react";
+import Loader from "../loader/Loader";
 
 // Utility HOC to wrap components in Suspense
 const withSuspense = (Component) => (
-  <Suspense fallback={<Typography variant="h2" component="h2">Loading...</Typography>}>
+  <Suspense fallback={<Loader />}>
     <Component />
   </Suspense>
 );
